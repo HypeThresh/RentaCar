@@ -44,7 +44,23 @@
         android:id="@+id/gestionAlquilerFragment"
         android:name="com.example.rentacar.gestionAlquilerFragment"
         android:label="fragment_gestion_alquiler"
-        tools:layout="@layout/fragment_gestion_alquiler" />
+        tools:layout="@layout/fragment_gestion_alquiler" >
+        <action
+            android:id="@+id/action_gestionAlquilerFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+        <action
+            android:id="@+id/action_gestionAlquilerFragment_to_add_alq_Fragment"
+            app:destination="@id/add_alq_Fragment" />
+        <action
+            android:id="@+id/action_gestionAlquilerFragment_to_edit_alq_Fragment"
+            app:destination="@id/edit_alq_Fragment" />
+        <action
+            android:id="@+id/action_gestionAlquilerFragment_to_del_alq_Fragment"
+            app:destination="@id/del_alq_Fragment" />
+        <action
+            android:id="@+id/action_gestionAlquilerFragment_to_list_alq_Fragment"
+            app:destination="@id/list_alq_Fragment" />
+    </fragment>
     <fragment
         android:id="@+id/gestionClientesFragment"
         android:name="com.example.rentacar.gestionClientesFragment"
@@ -75,4 +91,52 @@
         android:name="com.example.rentacar.estadoVehiculosFragment"
         android:label="fragment_estado_vehiculos"
         tools:layout="@layout/fragment_estado_vehiculos" />
+    <fragment
+        android:id="@+id/add_alq_Fragment"
+        android:name="com.example.rentacar.add_alq_Fragment"
+        android:label="fragment_add_alq_"
+        tools:layout="@layout/fragment_add_alq_" >
+        <action
+            android:id="@+id/action_add_alq_Fragment_to_gestionAlquilerFragment"
+            app:destination="@id/gestionAlquilerFragment" />
+        <action
+            android:id="@+id/action_add_alq_Fragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/edit_alq_Fragment"
+        android:name="com.example.rentacar.edit_alq_Fragment"
+        android:label="fragment_edit_alq_"
+        tools:layout="@layout/fragment_edit_alq_" >
+        <action
+            android:id="@+id/action_edit_alq_Fragment_to_gestionAlquilerFragment"
+            app:destination="@id/gestionAlquilerFragment" />
+        <action
+            android:id="@+id/action_edit_alq_Fragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/del_alq_Fragment"
+        android:name="com.example.rentacar.del_alq_Fragment"
+        android:label="fragment_del_alq_"
+        tools:layout="@layout/fragment_del_alq_" >
+        <action
+            android:id="@+id/action_del_alq_Fragment_to_gestionAlquilerFragment"
+            app:destination="@id/gestionAlquilerFragment" />
+        <action
+            android:id="@+id/action_del_alq_Fragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/list_alq_Fragment"
+        android:name="com.example.rentacar.list_alq_Fragment"
+        android:label="fragment_list_alq_"
+        tools:layout="@layout/fragment_list_alq_" >
+        <action
+            android:id="@+id/action_list_alq_Fragment_to_gestionAlquilerFragment"
+            app:destination="@id/gestionAlquilerFragment" />
+        <action
+            android:id="@+id/action_list_alq_Fragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+    </fragment>
 </navigation>
