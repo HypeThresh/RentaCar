@@ -36,7 +36,7 @@ public class inicioFragment extends Fragment {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.gestionVehiculos);
+                Navigation.findNavController(view).navigate(R.id.gestionAlquilerFragment);
             }
         });
 
