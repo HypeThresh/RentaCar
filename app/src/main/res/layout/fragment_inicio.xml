@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".inicioFragment"
+    android:background="#3AAF9E">
+
+    <Button
+        android:id="@+id/btnGesVehiculos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gestión de vehículos"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="@color/black"
+        />
+
+    <Button
+        android:id="@+id/btnGesAlquiler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gestión de Alquileres"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="200dp"
+        android:backgroundTint="@color/black"
+        />
+
+    <Button
+        android:id="@+id/btnGesClient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="300dp"
+        android:backgroundTint="@color/black"
+        android:text="Gestión de clientes" />
+
+</FrameLayout>

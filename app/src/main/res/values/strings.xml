@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Rent a Car</string>
+    <string name="gestion_de_vehiculos">Gestión de vehículos</string>
+    <string name="gestion_alquileres">Gestión de Alquileres</string>
+    <string name="gestion_clientes">Gestión de clientes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
