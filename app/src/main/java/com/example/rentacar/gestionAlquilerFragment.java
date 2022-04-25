@@ -19,9 +19,7 @@ public class gestionAlquilerFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View vista = inflater.inflate(R.layout.fragment_gestion_alquiler, container, false);
-
-
-
+        
         return vista;
     }
 }
