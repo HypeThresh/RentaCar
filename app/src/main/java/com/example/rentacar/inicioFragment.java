@@ -40,6 +40,13 @@ public class inicioFragment extends Fragment {
             }
         });
 
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.gestionClientesFragment);
+            }
+        });
+
         return vista;
     }
 }
