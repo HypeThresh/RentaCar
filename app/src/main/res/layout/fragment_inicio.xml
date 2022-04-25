@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".inicioFragment"
-    android:background="#3AAF9E">
+    android:background="@color/bgColor">
 
     <Button
         android:id="@+id/btnGesVehiculos"
@@ -13,7 +13,7 @@
         android:text="Gestión de vehículos"
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="100dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/btnColor"
         />
 
     <Button
@@ -23,7 +23,7 @@
         android:text="Gestión de Alquileres"
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="200dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/btnColor"
         />
 
     <Button
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="300dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/btnColor"
         android:text="Gestión de clientes" />
 
 </FrameLayout>
