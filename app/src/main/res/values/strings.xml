@@ -5,4 +5,10 @@
     <string name="gestion_clientes">Gestión de clientes</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="almacenar">Almacenar</string>
+    <string name="consultar">Consultar</string>
+    <string name="editar">Editar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="asignar_estado">Asignar estado</string>
+    <string name="regresar">Regresar</string>
 </resources>

@@ -1,14 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/FrameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".gestionVehiculosFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+
+    <Button
+        android:id="@+id/btnAlmacenarVehiculo"
+        android:layout_width="175sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|top"
+        android:layout_marginHorizontal="15sp"
+        android:layout_marginTop="100sp"
+        android:text="@string/almacenar" />
+
+    <Button
+        android:id="@+id/btnConsultarVehiculo"
+        android:layout_width="175sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|top"
+        android:layout_marginHorizontal="15sp"
+        android:layout_marginTop="100sp"
+        android:text="@string/consultar" />
+
+    <Button
+        android:id="@+id/btnEditarVehiculo"
+        android:layout_width="175sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginHorizontal="15sp"
+        android:layout_marginTop="250sp"
+        android:text="@string/editar" />
+
+    <Button
+        android:id="@+id/btnEliminarVehiculo"
+        android:layout_width="175sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginHorizontal="15sp"
+        android:layout_marginTop="250sp"
+        android:text="@string/eliminar" />
+
+    <Button
+        android:id="@+id/btnAsignarEstadoVehiculo"
+        android:layout_width="175sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginHorizontal="15sp"
+        android:layout_marginTop="400sp"
+        android:text="@string/asignar_estado" />
+
+    <Button
+        android:id="@+id/btnRegresarHomeVehiculo"
+        android:layout_width="175sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginHorizontal="15sp"
+        android:layout_marginTop="400sp"
+        android:text="@string/regresar" />
 
 </FrameLayout>

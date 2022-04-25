@@ -23,7 +23,23 @@
         android:id="@+id/gestionVehiculos"
         android:name="com.example.rentacar.gestionVehiculosFragment"
         android:label="fragment_gestion_vehiculos"
-        tools:layout="@layout/fragment_gestion_vehiculos" />
+        tools:layout="@layout/fragment_gestion_vehiculos" >
+        <action
+            android:id="@+id/action_gestionVehiculos_to_almacenarVehiculosFragment"
+            app:destination="@id/almacenarVehiculosFragment" />
+        <action
+            android:id="@+id/action_gestionVehiculos_to_consultarVehiculosFragment"
+            app:destination="@id/consultarVehiculosFragment" />
+        <action
+            android:id="@+id/action_gestionVehiculos_to_editarVehiculosFragment"
+            app:destination="@id/editarVehiculosFragment" />
+        <action
+            android:id="@+id/action_gestionVehiculos_to_eliminarVehiculosFragment"
+            app:destination="@id/eliminarVehiculosFragment" />
+        <action
+            android:id="@+id/action_gestionVehiculos_to_estadoVehiculosFragment"
+            app:destination="@id/estadoVehiculosFragment" />
+    </fragment>
     <fragment
         android:id="@+id/gestionAlquilerFragment"
         android:name="com.example.rentacar.gestionAlquilerFragment"
@@ -34,4 +50,29 @@
         android:name="com.example.rentacar.gestionClientesFragment"
         android:label="fragment_gestion_clientes"
         tools:layout="@layout/fragment_gestion_clientes" />
+    <fragment
+        android:id="@+id/almacenarVehiculosFragment"
+        android:name="com.example.rentacar.almacenarVehiculosFragment"
+        android:label="fragment_almacenar_vehiculos"
+        tools:layout="@layout/fragment_almacenar_vehiculos" />
+    <fragment
+        android:id="@+id/consultarVehiculosFragment"
+        android:name="com.example.rentacar.consultarVehiculosFragment"
+        android:label="fragment_consultar_vehiculos"
+        tools:layout="@layout/fragment_consultar_vehiculos" />
+    <fragment
+        android:id="@+id/editarVehiculosFragment"
+        android:name="com.example.rentacar.editarVehiculosFragment"
+        android:label="fragment_editar_vehiculos"
+        tools:layout="@layout/fragment_editar_vehiculos" />
+    <fragment
+        android:id="@+id/eliminarVehiculosFragment"
+        android:name="com.example.rentacar.eliminarVehiculosFragment"
+        android:label="fragment_eliminar_vehiculos"
+        tools:layout="@layout/fragment_eliminar_vehiculos" />
+    <fragment
+        android:id="@+id/estadoVehiculosFragment"
+        android:name="com.example.rentacar.estadoVehiculosFragment"
+        android:label="fragment_estado_vehiculos"
+        tools:layout="@layout/fragment_estado_vehiculos" />
 </navigation>
