@@ -5,10 +5,96 @@
     android:layout_height="match_parent"
     tools:context=".estadoVehiculosFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <EditText
+        android:id="@+id/numeroPlacaVehiculoEstado"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_marginHorizontal="20sp"
+        android:layout_marginTop="10sp"
+        android:padding="15sp"
+        android:hint="Ingrese la placa del vehiculo"
+        />
+
+    <EditText
+        android:id="@+id/nombreVehiculoEstado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_marginHorizontal="20sp"
+        android:layout_marginTop="90sp"
+        android:padding="15sp"
+        android:hint="Nombre"
+        android:visibility="invisible"
+        android:focusable="false"
+        />
+
+    <EditText
+        android:id="@+id/modeloVehiculoEstado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_marginHorizontal="20sp"
+        android:layout_marginTop="170sp"
+        android:padding="15sp"
+        android:hint="Modelo"
+        android:visibility="invisible"
+        android:focusable="false"
+        />
+
+    <EditText
+        android:id="@+id/MarcaVehiculoEstado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_marginHorizontal="20sp"
+        android:layout_marginTop="240sp"
+        android:padding="15sp"
+        android:hint="Marca"
+        android:visibility="invisible"
+        android:focusable="false"
+        />
+
+    <EditText
+        android:id="@+id/tipoVehiculoEstadoSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_marginHorizontal="20sp"
+        android:layout_marginTop="310sp"
+        android:padding="15sp"
+        android:hint="Tipo"
+        android:visibility="invisible"
+        android:focusable="false"
+        />
+
+    <Spinner
+        android:id="@+id/estadoVehiculoSpinnerEstado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/estadoVehiculo"
+        android:layout_marginHorizontal="10sp"
+        android:layout_marginTop="380sp"
+        android:padding="15sp"
+        android:visibility="invisible"
+        />
+
+    <Button
+        android:id="@+id/btnActualizarEstadoVehiculo"
+        android:layout_width="175sp"
+        android:layout_height="wrap_content"
+        android:text="Actualizar estado"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="15sp"
+        />
+
+    <Button
+        android:id="@+id/btnRegresarEstadoVehiculo"
+        android:layout_width="175sp"
+        android:layout_height="wrap_content"
+        android:text="Regresar"
+        android:layout_gravity="start|bottom"
+        android:layout_margin="15sp"
+        />
 
 </FrameLayout>
