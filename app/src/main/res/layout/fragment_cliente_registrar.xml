@@ -3,88 +3,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".editarVehiculosFragment">
+    tools:context=".clienteRegistrarFragment">
 
     <EditText
-        android:id="@+id/numeroPlacaVehiculoEditar"
+        android:id="@+id/nombreCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:layout_marginHorizontal="20sp"
         android:layout_marginTop="10sp"
         android:padding="15sp"
-        android:hint="Ingrese la placa del vehiculo"
+        android:hint="Nombres"
         />
 
     <EditText
-        android:id="@+id/nombreVehiculoEditar"
+        android:id="@+id/duiCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:layout_marginHorizontal="20sp"
         android:layout_marginTop="90sp"
         android:padding="15sp"
-        android:hint="Nombre"
-        android:visibility="invisible"
+        android:hint="DUI"
         />
 
     <EditText
-        android:id="@+id/modeloVehiculoEditar"
+        android:id="@+id/telefonoCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:layout_marginHorizontal="20sp"
         android:layout_marginTop="170sp"
         android:padding="15sp"
-        android:hint="Modelo"
-        android:visibility="invisible"
+        android:hint="Teléfono"
         />
 
     <EditText
-        android:id="@+id/MarcaVehiculoEditar"
+        android:id="@+id/direccionCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
         android:layout_marginHorizontal="20sp"
         android:layout_marginTop="240sp"
-        android:padding="15sp"
-        android:hint="Marca"
-        android:visibility="invisible"
-        />
-
-    <Spinner
-        android:id="@+id/tipoVehiculoEditarSpinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:entries="@array/tipoVehiculo"
-        android:layout_marginHorizontal="10sp"
-        android:layout_marginTop="310sp"
-        android:padding="15sp"
-        android:visibility="invisible"
-        />
-
-    <Spinner
-        android:id="@+id/estadoVehiculoEditarSpinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:entries="@array/estadoVehiculo"
-        android:layout_marginHorizontal="10sp"
-        android:layout_marginTop="380sp"
-        android:padding="15sp"
-        android:visibility="invisible"
-        />
+        android:hint="Dirección"
+        android:inputType="textPersonName"
+        android:padding="15sp" />
 
     <Button
-        android:id="@+id/btnEditarVehiculoEdit"
+        android:id="@+id/btnAlmacenarCliente"
         android:layout_width="175sp"
         android:layout_height="wrap_content"
-        android:text="Editar"
+        android:text="@string/registrarCliente"
         android:layout_gravity="end|bottom"
         android:layout_margin="15sp"
         />
 
     <Button
-        android:id="@+id/btnRegresarEditarVehiculo"
+        android:id="@+id/btnregresarRegistrarCliente"
         android:layout_width="175sp"
         android:layout_height="wrap_content"
         android:text="Regresar"

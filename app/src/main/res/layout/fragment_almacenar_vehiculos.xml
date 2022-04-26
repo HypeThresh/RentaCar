@@ -1,14 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/FrameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".almacenarVehiculosFragment">
+    tools:context=".gestionVehiculosFragment"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <EditText
+        android:id="@+id/nombreVehiculo"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_marginHorizontal="20sp"
+        android:layout_marginTop="10sp"
+        android:padding="15sp"
+        android:hint="Nombre"
+        />
+
+    <EditText
+        android:id="@+id/marcaVehiculo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_marginHorizontal="20sp"
+        android:layout_marginTop="90sp"
+        android:padding="15sp"
+        android:hint="Marca"
+        />
+
+    <EditText
+        android:id="@+id/modeloVehiculo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_marginHorizontal="20sp"
+        android:layout_marginTop="170sp"
+        android:padding="15sp"
+        android:hint="Modelo"
+        />
+
+    <EditText
+        android:id="@+id/numeroPlacaVehiculo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_marginHorizontal="20sp"
+        android:layout_marginTop="240sp"
+        android:padding="15sp"
+        android:hint="Numero de placa"
+        />
+
+    <Spinner
+        android:id="@+id/tipoVehiculoAlmacenarSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/tipoVehiculo"
+        android:layout_marginHorizontal="10sp"
+        android:layout_marginTop="310sp"
+        android:padding="15sp"
+        />
+
+    <Spinner
+        android:id="@+id/estadoVehiculoAlmacenarSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/estadoVehiculo"
+        android:layout_marginHorizontal="10sp"
+        android:layout_marginTop="380sp"
+        android:padding="15sp"
+        />
+
+    <Button
+        android:id="@+id/btnAlmacenarAlmacenVehiculo"
+        android:layout_width="175sp"
+        android:layout_height="wrap_content"
+        android:text="Almacenar"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="15sp"
+        />
+
+    <Button
+        android:id="@+id/btnregresarAlmacenVehiculo"
+        android:layout_width="175sp"
+        android:layout_height="wrap_content"
+        android:text="Regresar"
+        android:layout_gravity="start|bottom"
+        android:layout_margin="15sp"
+        />
 
 </FrameLayout>
+
+

@@ -11,4 +11,23 @@
     <string name="eliminar">Eliminar</string>
     <string name="asignar_estado">Asignar estado</string>
     <string name="regresar">Regresar</string>
+
+    <string-array name="tipoVehiculo">
+        <item>Coche</item>
+        <item>Microbus</item>
+        <item>Furgonetas de carga</item>
+        <item>Camion</item>
+    </string-array>
+
+    <string-array name="estadoVehiculo">
+        <item>Disponible</item>
+        <item>Alquilado</item>
+    </string-array>
+
+    <!-- CLIENTES -->
+    <string name="registrarCliente">Registrar</string>
+    <string name="editarCliente">Editar</string>
+    <string name="eliminarCliente">Eliminar</string>
+    <string name="consultarCliente">Consultar</string>
+
 </resources>
