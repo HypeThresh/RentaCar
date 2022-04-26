@@ -20,13 +20,12 @@
         android:id="@+id/nombreClienteEditar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
         android:layout_marginHorizontal="20sp"
         android:layout_marginTop="90sp"
-        android:padding="15sp"
         android:hint="Nombres"
-        android:visibility="invisible"
-        />
+        android:inputType="textPersonName"
+        android:padding="15sp"
+        android:visibility="invisible" />
 
     <EditText
         android:id="@+id/telefonoClienteEditar"

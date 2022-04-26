@@ -3,10 +3,41 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/MyApp/RentaCar/app/src/main/res/layout/fragment_add_alq_.xml" value="0.3625" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/MyApp/RentaCar/app/src/main/res/layout/fragment_consultar_vehiculos.xml" value="0.3625" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/MyApp/RentaCar/app/src/main/res/layout/fragment_del_alq_.xml" value="0.3625" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/MyApp/RentaCar/app/src/main/res/layout/fragment_edit_alq_.xml" value="0.3625" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/MyApp/RentaCar/app/src/main/res/layout/fragment_gestion_alquiler.xml" value="0.3625" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/MyApp/RentaCar/app/src/main/res/layout/fragment_list_alq_.xml" value="0.3625" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/Repositorios/RentaCar/app/src/main/res/drawable-anydpi/ic_action_add.xml" value="0.2985" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/Repositorios/RentaCar/app/src/main/res/drawable-anydpi/ic_action_addc.xml" value="0.2985" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/Repositorios/RentaCar/app/src/main/res/drawable-anydpi/ic_action_edit.xml" value="0.2985" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/Repositorios/RentaCar/app/src/main/res/drawable/ic_back.xml" value="0.2985" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/Repositorios/RentaCar/app/src/main/res/drawable/ic_baseline_save_24.xml" value="0.2985" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/Repositorios/RentaCar/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2985" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/Repositorios/RentaCar/app/src/main/res/layout/activity_main.xml" value="0.24954710144927536" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/Repositorios/RentaCar/app/src/main/res/layout/fragment_add_alq_.xml" value="0.3625" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/Repositorios/RentaCar/app/src/main/res/layout/fragment_almacenar_vehiculos.xml" value="0.3625" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/Repositorios/RentaCar/app/src/main/res/layout/fragment_consultar_vehiculos.xml" value="0.3625" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/Repositorios/RentaCar/app/src/main/res/layout/fragment_del_alq_.xml" value="0.3625" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/Repositorios/RentaCar/app/src/main/res/layout/fragment_edit_alq_.xml" value="0.3625" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/Repositorios/RentaCar/app/src/main/res/layout/fragment_editar_vehiculos.xml" value="0.3625" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/Repositorios/RentaCar/app/src/main/res/layout/fragment_eliminar_vehiculos.xml" value="0.3625" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/Repositorios/RentaCar/app/src/main/res/layout/fragment_estado_vehiculos.xml" value="0.3625" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/Repositorios/RentaCar/app/src/main/res/layout/fragment_gestion_alquiler.xml" value="0.33" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/Repositorios/RentaCar/app/src/main/res/layout/fragment_gestion_clientes.xml" value="0.3625" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/Repositorios/RentaCar/app/src/main/res/layout/fragment_gestion_vehiculos.xml" value="0.3625" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/Repositorios/RentaCar/app/src/main/res/layout/fragment_inicio.xml" value="0.24954710144927536" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/Repositorios/RentaCar/app/src/main/res/layout/fragment_list_alq_.xml" value="0.3625" />
+=======
+>>>>>>> c2a722e8b8a465c87d47df3167e03f8bde2e5430
         <entry key="..\:/Users/crist/Desktop/RentaCar/app/src/main/res/layout/activity_main.xml" value="0.1398148148148148" />
-        <entry key="..\:/Users/crist/Desktop/RentaCar/app/src/main/res/layout/fragment_almacenar_vehiculos.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/crist/Desktop/RentaCar/app/src/main/res/layout/fragment_almacenar_vehiculos.xml" value="0.25" />
+        <entry key="..\:/Users/crist/Desktop/RentaCar/app/src/main/res/layout/fragment_consultar_vehiculos.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/crist/Desktop/RentaCar/app/src/main/res/layout/fragment_editar_vehiculos.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/crist/Desktop/RentaCar/app/src/main/res/layout/fragment_eliminar_vehiculos.xml" value="0.20102564102564102" />
+        <entry key="..\:/Users/crist/Desktop/RentaCar/app/src/main/res/layout/fragment_estado_vehiculos.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/crist/Desktop/RentaCar/app/src/main/res/layout/fragment_gestion_alquiler.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/crist/Desktop/RentaCar/app/src/main/res/layout/fragment_gestion_clientes.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/crist/Desktop/RentaCar/app/src/main/res/layout/fragment_gestion_vehiculos.xml" value="0.18" />

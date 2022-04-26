@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".eliminarVehiculosFragment">
 
+
     <EditText
         android:id="@+id/numeroPlacaVehiculoEliminar"
         android:layout_width="match_parent"
@@ -100,3 +101,4 @@
         android:layout_margin="15sp"
         />
 </FrameLayout>
+

@@ -25,7 +25,7 @@ public class gestionAlquilerFragment extends Fragment {
         View vista = inflater.inflate(R.layout.fragment_gestion_alquiler, container, false);
 
         ImageView img = vista.findViewById(R.id.imgBtnBack);
-        Button btnAddAlq = vista.findViewById(R.id.btnAlmacenarAlq);
+        Button btnAddAlq = vista.findViewById(R.id.btnAlmAlq);
         Button btnConsAlq = vista.findViewById(R.id.btnConsultarAlq);
         Button btnEditAlq = vista.findViewById(R.id.btnEditarAlq);
         Button btnDltAlq = vista.findViewById(R.id.btnEliminarAlq);
