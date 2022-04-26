@@ -5,10 +5,73 @@
     android:layout_height="match_parent"
     tools:context=".clienteEliminarFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <EditText
+        android:id="@+id/duiClienteEliminar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:layout_marginTop="10sp"
+        android:padding="15sp"
+        android:hint="Ingrese el DUI de Cliente">
+    </EditText>
+
+    <EditText
+        android:id="@+id/nombreClienteEliminar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_marginHorizontal="20sp"
+        android:layout_marginTop="90sp"
+        android:padding="15sp"
+        android:hint="Nombres"
+        android:focusable="false"
+        android:visibility="invisible"
+        />
+
+    <EditText
+        android:id="@+id/telefonoClienteEliminar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_marginHorizontal="20sp"
+        android:layout_marginTop="170sp"
+        android:padding="15sp"
+        android:hint="Teléfono"
+        android:focusable="false"
+        android:visibility="invisible"
+        />
+
+    <EditText
+        android:id="@+id/direccionClienteEliminar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_marginHorizontal="20sp"
+        android:layout_marginTop="240sp"
+        android:padding="15sp"
+        android:hint="Dirección"
+        android:focusable="false"
+        android:visibility="invisible"
+        />
+
+    <Button
+        android:id="@+id/btnEliminarClienteDel"
+        android:layout_width="175sp"
+        android:layout_height="wrap_content"
+        android:text="Eliminar"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="15sp"
+        />
+
+    <Button
+        android:id="@+id/btnregresarEliminarCliente"
+        android:layout_width="175sp"
+        android:layout_height="wrap_content"
+        android:text="Regresar"
+        android:layout_gravity="start|bottom"
+        android:layout_margin="15sp"
+        />
 
 </FrameLayout>
