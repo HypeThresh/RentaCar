@@ -65,7 +65,20 @@
         android:id="@+id/gestionClientesFragment"
         android:name="com.example.rentacar.gestionClientesFragment"
         android:label="fragment_gestion_clientes"
-        tools:layout="@layout/fragment_gestion_clientes" />
+        tools:layout="@layout/fragment_gestion_clientes" >
+        <action
+            android:id="@+id/action_gestionClientesFragment_to_clienteRegistrarFragment"
+            app:destination="@id/clienteRegistrarFragment" />
+        <action
+            android:id="@+id/action_gestionClientesFragment_to_clienteEditarFragment"
+            app:destination="@id/clienteEditarFragment" />
+        <action
+            android:id="@+id/action_gestionClientesFragment_to_clienteEliminarFragment"
+            app:destination="@id/clienteEliminarFragment" />
+        <action
+            android:id="@+id/action_gestionClientesFragment_to_clienteConsultarFragment"
+            app:destination="@id/clienteConsultarFragment" />
+    </fragment>
     <fragment
         android:id="@+id/almacenarVehiculosFragment"
         android:name="com.example.rentacar.almacenarVehiculosFragment"
@@ -139,4 +152,24 @@
             android:id="@+id/action_list_alq_Fragment_to_inicioFragment"
             app:destination="@id/inicioFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/clienteRegistrarFragment"
+        android:name="com.example.rentacar.clienteRegistrarFragment"
+        android:label="fragment_cliente_registrar"
+        tools:layout="@layout/fragment_cliente_registrar" />
+    <fragment
+        android:id="@+id/clienteEditarFragment"
+        android:name="com.example.rentacar.clienteEditarFragment"
+        android:label="fragment_cliente_editar"
+        tools:layout="@layout/fragment_cliente_editar" />
+    <fragment
+        android:id="@+id/clienteEliminarFragment"
+        android:name="com.example.rentacar.clienteEliminarFragment"
+        android:label="fragment_cliente_eliminar"
+        tools:layout="@layout/fragment_cliente_eliminar" />
+    <fragment
+        android:id="@+id/clienteConsultarFragment"
+        android:name="com.example.rentacar.clienteConsultarFragment"
+        android:label="fragment_cliente_consultar"
+        tools:layout="@layout/fragment_cliente_consultar" />
 </navigation>
