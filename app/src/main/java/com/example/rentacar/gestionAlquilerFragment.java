@@ -60,7 +60,7 @@ public class gestionAlquilerFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.inicioFragment);
             }
         });
-        
+
         return vista;
     }
 }
