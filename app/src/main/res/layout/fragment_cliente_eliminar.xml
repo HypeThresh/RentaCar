@@ -3,11 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".eliminarVehiculosFragment">
-
+    tools:context=".clienteEliminarFragment">
 
     <EditText
-        android:id="@+id/numeroPlacaVehiculoEliminar"
+        android:id="@+id/duiClienteEliminar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
@@ -15,76 +14,50 @@
         android:layout_marginRight="20sp"
         android:layout_marginTop="10sp"
         android:padding="15sp"
-        android:hint="Ingrese la placa del vehiculo">
+        android:hint="Ingrese el DUI de Cliente">
     </EditText>
 
     <EditText
-        android:id="@+id/nombreVehiculoEliminar"
+        android:id="@+id/nombreClienteEliminar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:layout_marginHorizontal="20sp"
         android:layout_marginTop="90sp"
         android:padding="15sp"
-        android:hint="Nombre"
+        android:hint="Nombres"
         android:focusable="false"
         android:visibility="invisible"
         />
 
     <EditText
-        android:id="@+id/modeloVehiculoEliminar"
+        android:id="@+id/telefonoClienteEliminar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:layout_marginHorizontal="20sp"
         android:layout_marginTop="170sp"
         android:padding="15sp"
-        android:hint="Modelo"
+        android:hint="Teléfono"
         android:focusable="false"
         android:visibility="invisible"
         />
 
     <EditText
-        android:id="@+id/marcaVehiculoEliminar"
+        android:id="@+id/direccionClienteEliminar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:layout_marginHorizontal="20sp"
         android:layout_marginTop="240sp"
         android:padding="15sp"
-        android:hint="Marca"
-        android:focusable="false"
-        android:visibility="invisible"
-        />
-
-    <EditText
-        android:id="@+id/tipoVehiculoEliminar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:layout_marginHorizontal="20sp"
-        android:layout_marginTop="310sp"
-        android:padding="15sp"
-        android:hint="Tipo"
-        android:focusable="false"
-        android:visibility="invisible"
-        />
-
-    <EditText
-        android:id="@+id/estadoVehiculoEliminar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:layout_marginHorizontal="20sp"
-        android:layout_marginTop="380sp"
-        android:padding="15sp"
-        android:hint="Estado"
+        android:hint="Dirección"
         android:focusable="false"
         android:visibility="invisible"
         />
 
     <Button
-        android:id="@+id/btnEliminarVehiculo"
+        android:id="@+id/btnEliminarClienteDel"
         android:layout_width="175sp"
         android:layout_height="wrap_content"
         android:text="Eliminar"
@@ -93,12 +66,12 @@
         />
 
     <Button
-        android:id="@+id/btnregresarEliminarVehiculo"
+        android:id="@+id/btnregresarEliminarCliente"
         android:layout_width="175sp"
         android:layout_height="wrap_content"
         android:text="Regresar"
         android:layout_gravity="start|bottom"
         android:layout_margin="15sp"
         />
-</FrameLayout>
 
+</FrameLayout>

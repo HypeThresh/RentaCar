@@ -1,7 +1,6 @@
 package com.example.rentacar;
 
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -10,28 +9,27 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class del_alq_Fragment extends Fragment {
+public class clienteRegistrarFragment extends Fragment {
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public clienteRegistrarFragment() {
+        // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View va= inflater.inflate(R.layout.fragment_del_alq_, container, false);
+        View vista = inflater.inflate(R.layout.fragment_cliente_registrar, container, false);
 
-        Button btn = va.findViewById(R.id.btnBck3);
+        Button btn1 = vista.findViewById(R.id.btnregresarRegistrarCliente);
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.gestionAlquilerFragment);
+                Navigation.findNavController(view).navigate(R.id.gestionClientesFragment);
             }
         });
 
-        return va;
+        return vista;
     }
 }

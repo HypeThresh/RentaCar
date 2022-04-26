@@ -23,4 +23,11 @@
         <item>Disponible</item>
         <item>Alquilado</item>
     </string-array>
+
+    <!-- CLIENTES -->
+    <string name="registrarCliente">Registrar</string>
+    <string name="editarCliente">Editar</string>
+    <string name="eliminarCliente">Eliminar</string>
+    <string name="consultarCliente">Consultar</string>
+
 </resources>

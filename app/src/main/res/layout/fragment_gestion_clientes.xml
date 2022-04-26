@@ -1,7 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".gestionClientesFragment"
-    android:background="@color/bgColor"/>
+    android:background="@color/bgColor">
+
+    <Button
+        android:id="@+id/btnRegistrarCliente"
+        android:layout_width="175sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|top"
+        android:layout_marginHorizontal="15sp"
+        android:layout_marginTop="100sp"
+        android:text="@string/registrarCliente" />
+
+    <Button
+        android:id="@+id/btnEditarCliente"
+        android:layout_width="175sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|top"
+        android:layout_marginHorizontal="15sp"
+        android:layout_marginTop="100sp"
+        android:text="@string/editarCliente" />
+
+    <Button
+        android:id="@+id/btnEliminarCliente"
+        android:layout_width="175sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginHorizontal="15sp"
+        android:layout_marginTop="250sp"
+        android:text="@string/eliminarCliente" />
+
+    <Button
+        android:id="@+id/btnConsultarCliente"
+        android:layout_width="175sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginHorizontal="15sp"
+        android:layout_marginTop="250sp"
+        android:text="@string/consultarCliente"  />
+
+    <ImageView
+        android:id="@+id/imgBtnBack"
+        android:layout_width="39dp"
+        android:layout_height="36dp"
+        android:src="@drawable/ic_back"
+        app:tint="@color/btnColor" />
+
+</FrameLayout>
