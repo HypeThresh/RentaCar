@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -46,40 +47,38 @@ public class consultarVehiculosFragment extends Fragment {
         placa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextView tv1, tv2, tv3, tv4, tv5 , tvPlaca;
-                tvPlaca = vista.findViewById(R.id.numeroPlacaVehiculoConsutar);
-                tv1 = vista.findViewById(R.id.nombreVehiculoConsultar);
-                tv1.setVisibility(View.VISIBLE);
-                tv2 = vista.findViewById(R.id.modeloVehiculoConsultar);
-                tv2.setVisibility(View.VISIBLE);
-                tv3 = vista.findViewById(R.id.MarcaVehiculoConsultar);
-                tv3.setVisibility(View.VISIBLE);
-                tv4 = vista.findViewById(R.id.tipoVehiculoConsultarSpinner);
-                tv4.setVisibility(View.VISIBLE);
-                tv5 = vista.findViewById(R.id.estadoVehiculoConsultarSpinner);
-                tv5.setVisibility(View.VISIBLE);
-
                 FirebaseFirestore db;
                 db = FirebaseFirestore.getInstance();
-
-                DocumentReference documentReference = db.collection("vehiculos").document(tvPlaca.getText().toString());
-                documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                db.collection("vehiculos").document(placa.getText().toString())
+                    .get()
+                    .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        String nombre = ""+documentSnapshot.getData().get("nombre");
+                        TextView tv1, tv2, tv3, tv4, tv5;
+                        tv1 = vista.findViewById(R.id.nombreVehiculoConsultar);
+                        tv1.setVisibility(View.VISIBLE);
+                        tv2 = vista.findViewById(R.id.modeloVehiculoConsultar);
+                        tv2.setVisibility(View.VISIBLE);
+                        tv3 = vista.findViewById(R.id.MarcaVehiculoConsultar);
+                        tv3.setVisibility(View.VISIBLE);
+                        tv4 = vista.findViewById(R.id.tipoVehiculoConsultarSpinner);
+                        tv4.setVisibility(View.VISIBLE);
+                        tv5 = vista.findViewById(R.id.estadoVehiculoConsultarSpinner);
+                        tv5.setVisibility(View.VISIBLE);
+
+                        String nombre = "" + documentSnapshot.getData().get("nombre");
                         tv1.setText(nombre);
-                        String modelo = ""+documentSnapshot.getData().get("modelo");
+                        String modelo = "" + documentSnapshot.getData().get("modelo");
                         tv2.setText(modelo);
-                        String marca = ""+documentSnapshot.getData().get("marca");
+                        String marca = "" + documentSnapshot.getData().get("marca");
                         tv3.setText(marca);
-                        String tipo = ""+documentSnapshot.getData().get("tipo");
+                        String tipo = "" + documentSnapshot.getData().get("tipo");
                         tv4.setText(tipo);
-                        String estado = ""+documentSnapshot.getData().get("estado");
+                        String estado = "" + documentSnapshot.getData().get("estado");
                         tv5.setText(estado);
+                        Toast.makeText(vista.getContext(), "Datos encontrados", Toast.LENGTH_SHORT).show();
                     }
                 });
-
-
             }
         });
 
