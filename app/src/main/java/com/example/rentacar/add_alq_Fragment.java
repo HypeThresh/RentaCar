@@ -29,7 +29,7 @@ public class add_alq_Fragment extends Fragment {
         // Inflate the layout for this fragment
         View bas= inflater.inflate(R.layout.fragment_add_alq_, container, false);
 
-        Button btn = bas.findViewById(R.id.btnBck);
+        Button btn = bas.findViewById(R.id.btnBck4);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
