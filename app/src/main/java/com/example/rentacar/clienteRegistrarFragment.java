@@ -54,7 +54,7 @@ public class clienteRegistrarFragment extends Fragment {
                 db = FirebaseFirestore.getInstance();
 
                 clienteClass nuevoCliente = new clienteClass(txtName.getText().toString(),txtTel.getText().toString(),
-                        txtDui.getText().toString(),txtDir.getText().toString());
+                        txtDir.getText().toString());
 
                 db.collection("clientes")
                         .document(txtDui.getText().toString())
