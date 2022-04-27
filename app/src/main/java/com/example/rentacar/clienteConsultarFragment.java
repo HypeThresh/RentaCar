@@ -14,6 +14,11 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 public class clienteConsultarFragment extends Fragment {
 
     public clienteConsultarFragment() {
@@ -32,17 +37,44 @@ public class clienteConsultarFragment extends Fragment {
         dui.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextView tv1;
+                TextView tv1, tvDui, tv2, tv3;
                 TableLayout tr1;
+
+                tvDui = vista.findViewById(R.id.duiClienteConsultar);
 
                 tv1 = vista.findViewById(R.id.listadoVehiculosAlquilados);
                 tv1.setVisibility(View.VISIBLE);
-
+                tv2 = vista.findViewById(R.id.clConsult);
+                tv2.setVisibility(view.VISIBLE);
+                tv3 = vista.findViewById(R.id.vhConsult);
+                tv3.setVisibility(view.VISIBLE);
                 tr1 = vista.findViewById(R.id.tablaVehiculosAlquilados);
                 tr1.setVisibility(View.VISIBLE);
 
 
                 Toast.makeText(view.getContext(), dui.getText().toString(), Toast.LENGTH_SHORT).show();
+
+                FirebaseFirestore db;
+                db = FirebaseFirestore.getInstance();
+                DocumentReference documentReference = db.collection("alquileres")
+                        .document(tvDui.getText().toString());
+                documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                        String car = ""+documentSnapshot.getData().get("vehiculos");
+                        tv1.setText(car);
+                        String name = ""+documentSnapshot.getData().get("cliente");
+                        tv2.setText(name);
+                        String vh = ""+documentSnapshot.getData().get("vehiculos");
+                        tv3.setText(vh);
+
+
+
+
+                    }
+                });
+
             }
         });
 

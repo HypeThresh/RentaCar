@@ -50,35 +50,35 @@ public class consultarVehiculosFragment extends Fragment {
                 FirebaseFirestore db;
                 db = FirebaseFirestore.getInstance();
                 db.collection("vehiculos").document(placa.getText().toString())
-                    .get()
-                    .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                    @Override
-                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        TextView tv1, tv2, tv3, tv4, tv5;
-                        tv1 = vista.findViewById(R.id.nombreVehiculoConsultar);
-                        tv1.setVisibility(View.VISIBLE);
-                        tv2 = vista.findViewById(R.id.modeloVehiculoConsultar);
-                        tv2.setVisibility(View.VISIBLE);
-                        tv3 = vista.findViewById(R.id.MarcaVehiculoConsultar);
-                        tv3.setVisibility(View.VISIBLE);
-                        tv4 = vista.findViewById(R.id.tipoVehiculoConsultarSpinner);
-                        tv4.setVisibility(View.VISIBLE);
-                        tv5 = vista.findViewById(R.id.estadoVehiculoConsultarSpinner);
-                        tv5.setVisibility(View.VISIBLE);
+                        .get()
+                        .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                            @Override
+                            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                TextView tv1, tv2, tv3, tv4, tv5;
+                                tv1 = vista.findViewById(R.id.nombreVehiculoConsultar);
+                                tv1.setVisibility(View.VISIBLE);
+                                tv2 = vista.findViewById(R.id.modeloVehiculoConsultar);
+                                tv2.setVisibility(View.VISIBLE);
+                                tv3 = vista.findViewById(R.id.MarcaVehiculoConsultar);
+                                tv3.setVisibility(View.VISIBLE);
+                                tv4 = vista.findViewById(R.id.tipoVehiculoConsultarSpinner);
+                                tv4.setVisibility(View.VISIBLE);
+                                tv5 = vista.findViewById(R.id.estadoVehiculoConsultarSpinner);
+                                tv5.setVisibility(View.VISIBLE);
 
-                        String nombre = "" + documentSnapshot.getData().get("nombre");
-                        tv1.setText(nombre);
-                        String modelo = "" + documentSnapshot.getData().get("modelo");
-                        tv2.setText(modelo);
-                        String marca = "" + documentSnapshot.getData().get("marca");
-                        tv3.setText(marca);
-                        String tipo = "" + documentSnapshot.getData().get("tipo");
-                        tv4.setText(tipo);
-                        String estado = "" + documentSnapshot.getData().get("estado");
-                        tv5.setText(estado);
-                        Toast.makeText(vista.getContext(), "Datos encontrados", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                                String nombre = "" + documentSnapshot.getData().get("nombre");
+                                tv1.setText(nombre);
+                                String modelo = "" + documentSnapshot.getData().get("modelo");
+                                tv2.setText(modelo);
+                                String marca = "" + documentSnapshot.getData().get("marca");
+                                tv3.setText(marca);
+                                String tipo = "" + documentSnapshot.getData().get("tipo");
+                                tv4.setText(tipo);
+                                String estado = "" + documentSnapshot.getData().get("estado");
+                                tv5.setText(estado);
+                                Toast.makeText(vista.getContext(), "Datos encontrados", Toast.LENGTH_SHORT).show();
+                            }
+                        });
             }
         });
 

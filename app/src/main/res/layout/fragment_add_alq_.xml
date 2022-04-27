@@ -24,14 +24,14 @@
         android:layout_gravity="center_horizontal" />
 
     <ImageButton
-        android:id="@+id/imageButtonDel"
+        android:id="@+id/imageBtnAdd"
         android:layout_width="155dp"
         android:layout_height="30dp"
         android:layout_gravity="end"
         android:layout_marginTop="500dp"
         android:layout_marginRight="50sp"
         android:background="@color/btnColor"
-        android:src="@drawable/ic_action_addc"
+        android:src="@drawable/ic_baseline_save_24"
         app:tint="@color/white" />
 
     <Button
@@ -46,7 +46,7 @@
         android:text="Regresar" />
 
     <EditText
-        android:id="@+id/delDateIn"
+        android:id="@+id/addDateIn"
         android:layout_width="230dp"
         android:layout_height="30dp"
         android:textColor="@color/white"
@@ -57,7 +57,7 @@
         android:inputType="date" />
 
     <EditText
-        android:id="@+id/delDateReg"
+        android:id="@+id/addDateFin"
         android:layout_width="230dp"
         android:layout_height="30dp"
         android:textColor="@color/white"
@@ -107,5 +107,18 @@
         android:layout_marginLeft="20sp"
         android:layout_gravity="start"
         android:text="Fecha fin: "/>
+
+    <EditText
+        android:id="@+id/txtIdAlq"
+        android:layout_width="84dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Id"
+        android:textAlignment="center"
+        android:inputType="textPersonName"
+        android:textColor="@color/btnColor"
+        android:textColorHint="@color/hintColor" />
 
 </FrameLayout>

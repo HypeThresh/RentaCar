@@ -1,86 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".list_alq_Fragment">
 
-    <TableLayout
-        android:id="@+id/tablaVehiculosAlquilados"
-        android:layout_width="match_parent"
-        android:layout_height="479dp"
-        android:layout_marginTop="150dp"
-        android:focusable="false"
-
-        android:gravity="center_horizontal"
-        android:visibility="visible">
-
-        <TableRow
-            android:id="@+id/titulos"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal"
-
-
-            >
-
-            <TextView
-                android:id="@+id/txtTitulo1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:gravity="center"
-                android:padding="10sp"
-                android:text="Id"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/txtTitulo2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:padding="10sp"
-                android:text="vehículo"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/txtTitulo3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:padding="10sp"
-                android:text="Cliente"
-                android:textSize="14sp" />
-
-        </TableRow>
-
-    </TableLayout>
+    <TextView
+        android:id="@+id/txtId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="40dp"
+        android:text="Id"/>
 
     <TextView
-        android:id="@+id/rangFecFin"
-        android:layout_width="230dp"
-        android:layout_height="30dp"
-        android:textColor="@color/material_dynamic_neutral_variant70"
-        android:background="@color/bgColor"
-        android:layout_gravity="center|top"
-        android:layout_marginTop="100dp"
-        android:textColorHint="@color/black"
-        android:ems="10"
-        android:hint="Fecha Final: "
-        android:inputType="date" />
+        android:id="@+id/txtClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="80dp"
+        android:text="cliente" />
+    <TextView
+        android:id="@+id/txtVehicle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="160dp"
+        android:text="vehiculo" />
 
     <TextView
-        android:id="@+id/rangFecIni"
-        android:layout_width="230dp"
-        android:layout_height="30dp"
-        android:textColor="@color/material_dynamic_neutral_variant70"
-        android:background="@color/bgColor"
-        android:layout_gravity="center|top"
-        android:layout_marginTop="40dp"
-        android:textColorHint="@color/black"
-        android:ems="10"
-        android:hint="Fecha Inicial: "
-        android:inputType="date" />
+        android:id="@+id/txtFecha"
+        android:layout_width="47dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="240dp"
+        android:layout_marginTop="80dp"
+        android:text="fecha" />
 
+    <Button
+        android:id="@+id/buttonConsult"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="20dp"
+        android:text="Consultar" />
+
+    <ImageView
+        android:id="@+id/imageViewBack"
+        android:layout_width="54dp"
+        android:layout_height="46dp"
+        android:src="@drawable/ic_back" />
 
 </FrameLayout>
