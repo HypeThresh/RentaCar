@@ -6,7 +6,7 @@ public class vehiculosClass {
     public String modelo;
     public String tipo;
     public String estado;
-    public int elimindado;
+    public int eliminado;
 
     public vehiculosClass(String nombre,String marca,String modelo,String tipo,String estado,int eliminado){
         this.nombre = nombre;
@@ -14,7 +14,7 @@ public class vehiculosClass {
         this.modelo = modelo;
         this.tipo = tipo;
         this.estado = estado;
-        this.elimindado = eliminado;
+        this.eliminado = eliminado;
     }
 
 }

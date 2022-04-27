@@ -87,7 +87,7 @@ public class eliminarVehiculosFragment extends Fragment {
                 FirebaseFirestore db;
                 db = FirebaseFirestore.getInstance();
                 db.collection("vehiculos").document(id)
-                        .delete()
+                        .update("eliminado", 1)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
@@ -109,7 +109,7 @@ public class eliminarVehiculosFragment extends Fragment {
                                 tv5 = vista.findViewById(R.id.estadoVehiculoEliminar);
                                 tv5.setText("");
                                 tv5.setVisibility(View.INVISIBLE);
-                                Toast.makeText(vista.getContext(), "Documento eliminado correctamente", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(vista.getContext(), "Vehiculo eliminado correctamente", Toast.LENGTH_SHORT).show();
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
