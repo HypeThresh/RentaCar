@@ -62,7 +62,8 @@ public class consultarVehiculosFragment extends Fragment {
                 FirebaseFirestore db;
                 db = FirebaseFirestore.getInstance();
 
-                DocumentReference documentReference = db.collection("vehiculos").document(tvPlaca.getText().toString());
+                DocumentReference documentReference = db.collection("vehiculos")
+                        .document(tvPlaca.getText().toString());
                 documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
