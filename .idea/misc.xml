@@ -14,6 +14,18 @@
         <entry key="..\:/Users/crist/Desktop/RentaCar/app/src/main/res/layout/fragment_gestion_clientes.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/crist/Desktop/RentaCar/app/src/main/res/layout/fragment_gestion_vehiculos.xml" value="0.18" />
         <entry key="..\:/Users/crist/Desktop/RentaCar/app/src/main/res/layout/fragment_inicio.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/junior/Desktop/actualizadp/RentaCar/app/src/main/res/layout/fragment_almacenar_vehiculos.xml" value="0.3671875" />
+        <entry key="..\:/Users/junior/Desktop/actualizadp/RentaCar/app/src/main/res/layout/fragment_cliente_consultar.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/junior/Desktop/actualizadp/RentaCar/app/src/main/res/layout/fragment_cliente_editar.xml" value="0.3671875" />
+        <entry key="..\:/Users/junior/Desktop/actualizadp/RentaCar/app/src/main/res/layout/fragment_cliente_eliminar.xml" value="0.3671875" />
+        <entry key="..\:/Users/junior/Desktop/actualizadp/RentaCar/app/src/main/res/layout/fragment_cliente_registrar.xml" value="0.3671875" />
+        <entry key="..\:/Users/junior/Desktop/actualizadp/RentaCar/app/src/main/res/layout/fragment_consultar_vehiculos.xml" value="0.3671875" />
+        <entry key="..\:/Users/junior/Desktop/actualizadp/RentaCar/app/src/main/res/layout/fragment_editar_vehiculos.xml" value="0.3671875" />
+        <entry key="..\:/Users/junior/Desktop/actualizadp/RentaCar/app/src/main/res/layout/fragment_eliminar_vehiculos.xml" value="0.3671875" />
+        <entry key="..\:/Users/junior/Desktop/actualizadp/RentaCar/app/src/main/res/layout/fragment_estado_vehiculos.xml" value="0.3671875" />
+        <entry key="..\:/Users/junior/Desktop/actualizadp/RentaCar/app/src/main/res/layout/fragment_gestion_alquiler.xml" value="0.3671875" />
+        <entry key="..\:/Users/junior/Desktop/actualizadp/RentaCar/app/src/main/res/layout/fragment_gestion_clientes.xml" value="0.3671875" />
+        <entry key="..\:/Users/junior/Desktop/actualizadp/RentaCar/app/src/main/res/layout/fragment_inicio.xml" value="0.3671875" />
       </map>
     </option>
   </component>

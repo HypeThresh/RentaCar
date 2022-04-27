@@ -5,10 +5,97 @@
     android:layout_height="match_parent"
     tools:context=".clienteConsultarFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <EditText
+        android:id="@+id/duiClienteConsultar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:layout_marginTop="10sp"
+        android:padding="15sp"
+        android:hint="Ingrese el DUI de Cliente">
+    </EditText>
+
+    <TextView
+        android:id="@+id/listadoVehiculosAlquilados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_marginHorizontal="20sp"
+        android:layout_marginTop="80sp"
+        android:padding="15sp"
+        android:focusable="false"
+        android:visibility="invisible"
+        android:text="Listado de vehículos en alquiler:" />
+
+    <TableLayout
+        android:id="@+id/tablaVehiculosAlquilados"
+        android:layout_width="match_parent"
+        android:layout_height="479dp"
+        android:layout_marginTop="150dp"
+        android:gravity="center_horizontal"
+
+        android:focusable="false"
+        android:visibility="invisible" >
+
+        <TableRow
+            android:id="@+id/titulos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+
+
+            >
+
+            <TextView
+                android:id="@+id/txtTitulo1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="N." />
+
+            <TextView
+                android:id="@+id/txtTitulo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:layout_weight="3"
+                android:text="Nombre de vehículo" />
+
+            <TextView
+                android:id="@+id/txtTitulo3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:textSize="14sp"
+                android:layout_weight="3"
+                android:text="Placa" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/btnConsultarCliente"
+        android:layout_width="175sp"
+        android:layout_height="wrap_content"
+        android:text="Consultar"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="15sp"
+        />
+
+    <Button
+        android:id="@+id/btnregresarConsultarCliente"
+        android:layout_width="175sp"
+        android:layout_height="wrap_content"
+        android:text="Regresar"
+        android:layout_gravity="start|bottom"
+        android:layout_margin="15sp"
+        />
 
 </FrameLayout>

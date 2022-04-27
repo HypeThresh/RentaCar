@@ -54,6 +54,7 @@ public class almacenarVehiculosFragment extends Fragment {
                 spnTipo = vista.findViewById(R.id.tipoVehiculoAlmacenarSpinner);
                 spnEstado = vista.findViewById(R.id.estadoVehiculoAlmacenarSpinner);
 
+                //Conexion a bd
                 FirebaseFirestore db;
                 db = FirebaseFirestore.getInstance();
 
@@ -64,7 +65,7 @@ public class almacenarVehiculosFragment extends Fragment {
 
                 db.collection("vehiculos")
                         .document(txtPlaca.getText().toString())
-                        .set(nuevoVehiculo)
+                        .set(nuevoVehiculo)// objeto nuevo
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
