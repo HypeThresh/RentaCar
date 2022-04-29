@@ -30,65 +30,91 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Source;
 
 public class consultarVehiculosFragment extends Fragment {
-
     public consultarVehiculosFragment() {
         // Required empty public constructor
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View vista = inflater.inflate(R.layout.fragment_consultar_vehiculos, container, false);
-
+        View vista = inflater.inflate(R.layout.fragment_consultar_vehiculos, container,false);
         TextView placa = vista.findViewById(R.id.numeroPlacaVehiculoConsutar);
         Button btnRegresar = vista.findViewById(R.id.btnRegresarConsultarVehiculo);
-
-        placa.setOnClickListener(new View.OnClickListener() {
+        Button btnConsultar = vista.findViewById(R.id.btnConsultarVehiculoConsult);
+        btnConsultar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FirebaseFirestore db;
-                db = FirebaseFirestore.getInstance();
-                db.collection("vehiculos").document(placa.getText().toString())
-                        .get()
-                        .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                            @Override
-                            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                                TextView tv1, tv2, tv3, tv4, tv5;
-                                tv1 = vista.findViewById(R.id.nombreVehiculoConsultar);
-                                tv1.setVisibility(View.VISIBLE);
-                                tv2 = vista.findViewById(R.id.modeloVehiculoConsultar);
-                                tv2.setVisibility(View.VISIBLE);
-                                tv3 = vista.findViewById(R.id.MarcaVehiculoConsultar);
-                                tv3.setVisibility(View.VISIBLE);
-                                tv4 = vista.findViewById(R.id.tipoVehiculoConsultarSpinner);
-                                tv4.setVisibility(View.VISIBLE);
-                                tv5 = vista.findViewById(R.id.estadoVehiculoConsultarSpinner);
-                                tv5.setVisibility(View.VISIBLE);
-
-                                String nombre = "" + documentSnapshot.getData().get("nombre");
-                                tv1.setText(nombre);
-                                String modelo = "" + documentSnapshot.getData().get("modelo");
-                                tv2.setText(modelo);
-                                String marca = "" + documentSnapshot.getData().get("marca");
-                                tv3.setText(marca);
-                                String tipo = "" + documentSnapshot.getData().get("tipo");
-                                tv4.setText(tipo);
-                                String estado = "" + documentSnapshot.getData().get("estado");
-                                tv5.setText(estado);
-                                Toast.makeText(vista.getContext(), "Datos encontrados", Toast.LENGTH_SHORT).show();
-                            }
-                        });
+                if(placa.getText().toString().isEmpty()){
+                    Toast.makeText(vista.getContext(), "Ingresa una placa",
+                            Toast.LENGTH_SHORT).show();
+                }else {
+                    FirebaseFirestore db;
+                    db = FirebaseFirestore.getInstance();
+                    db.collection("vehiculos").document(placa.getText().toString())
+                            .get()
+                            .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                               @Override
+                               public void onComplete(@NonNull Task<DocumentSnapshot>
+                                                              task) {
+                                   if (task.isSuccessful()) {
+                                       DocumentSnapshot document = task.getResult();
+                                       TextView tv1, tv2, tv3, tv4, tv5;
+                                       tv1 = vista.findViewById(R.id.nombreVehiculoConsultar);
+                                       tv2 = vista.findViewById(R.id.modeloVehiculoConsultar);
+                                       tv3 = vista.findViewById(R.id.MarcaVehiculoConsultar);
+                                       tv4 = vista.findViewById(R.id.tipoVehiculoConsultarSpinner);
+                                       tv5 =
+                                               vista.findViewById(R.id.estadoVehiculoConsultarSpinner);
+                                       if (document.exists()) {
+                                           tv1.setVisibility(View.VISIBLE);
+                                           tv2.setVisibility(View.VISIBLE);
+                                           tv3.setVisibility(View.VISIBLE);
+                                           tv4.setVisibility(View.VISIBLE);
+                                           tv5.setVisibility(View.VISIBLE);
+                                           String nombre = "" +
+                                                   task.getResult().get("nombre").toString();
+                                           tv1.setText(nombre);
+                                           String modelo = "" +
+                                                   task.getResult().get("modelo").toString();
+                                           tv2.setText(modelo);
+                                           String marca = "" +
+                                                   task.getResult().get("marca").toString();
+                                           tv3.setText(marca);
+                                           String tipo = "" + task.getResult().get("tipo").toString();
+                                           tv4.setText(tipo);
+                                           String estado = "" +
+                                                   task.getResult().get("estado").toString();
+                                           tv5.setText(estado);
+                                           Toast.makeText(vista.getContext(), "Datos encontrados",
+                                                   Toast.LENGTH_SHORT).show();
+                                       } else {
+                                           tv1.setVisibility(View.INVISIBLE);
+                                           tv2.setVisibility(View.INVISIBLE);
+                                           tv3.setVisibility(View.INVISIBLE);
+                                           tv4.setVisibility(View.INVISIBLE);
+                                           tv5.setVisibility(View.INVISIBLE);
+                                           tv1.setText("");
+                                           tv2.setText("");
+                                           tv3.setText("");
+                                           tv4.setText("");
+                                           tv5.setText("");
+                                           placa.setText("");
+                                           Toast.makeText(vista.getContext(), "Datos no encontrados", Toast.LENGTH_SHORT).show();
+                                       }
+                                   } else {
+                                       Toast.makeText(vista.getContext(), "Error al realizar la consulta", Toast.LENGTH_SHORT).show();
+                                   }
+                               }
+                           });
+                }
             }
         });
-
         btnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.gestionVehiculos);
             }
         });
-
         return vista;
     }
 }
