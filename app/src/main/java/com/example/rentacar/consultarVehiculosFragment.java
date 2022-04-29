@@ -45,67 +45,60 @@ public class consultarVehiculosFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if(placa.getText().toString().isEmpty()){
-                    Toast.makeText(vista.getContext(), "Ingresa una placa",
-                            Toast.LENGTH_SHORT).show();
+                    Toast.makeText(vista.getContext(), "Ingresa una placa", Toast.LENGTH_SHORT).show();
                 }else {
                     FirebaseFirestore db;
                     db = FirebaseFirestore.getInstance();
                     db.collection("vehiculos").document(placa.getText().toString())
-                            .get()
-                            .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                               @Override
-                               public void onComplete(@NonNull Task<DocumentSnapshot>
-                                                              task) {
-                                   if (task.isSuccessful()) {
-                                       DocumentSnapshot document = task.getResult();
-                                       TextView tv1, tv2, tv3, tv4, tv5;
-                                       tv1 = vista.findViewById(R.id.nombreVehiculoConsultar);
-                                       tv2 = vista.findViewById(R.id.modeloVehiculoConsultar);
-                                       tv3 = vista.findViewById(R.id.MarcaVehiculoConsultar);
-                                       tv4 = vista.findViewById(R.id.tipoVehiculoConsultarSpinner);
-                                       tv5 =vista.findViewById(R.id.estadoVehiculoConsultarSpinner);
+                        .get()
+                        .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                           @Override
+                           public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                               if (task.isSuccessful()) {
+                                   DocumentSnapshot document = task.getResult();
+                                   TextView tv1, tv2, tv3, tv4, tv5;
+                                   tv1 = vista.findViewById(R.id.nombreVehiculoConsultar);
+                                   tv2 = vista.findViewById(R.id.modeloVehiculoConsultar);
+                                   tv3 = vista.findViewById(R.id.MarcaVehiculoConsultar);
+                                   tv4 = vista.findViewById(R.id.tipoVehiculoConsultarSpinner);
+                                   tv5 = vista.findViewById(R.id.estadoVehiculoConsultarSpinner);
+                                   if (document.exists()) {
+                                       tv1.setVisibility(View.VISIBLE);
+                                       tv2.setVisibility(View.VISIBLE);
+                                       tv3.setVisibility(View.VISIBLE);
+                                       tv4.setVisibility(View.VISIBLE);
+                                       tv5.setVisibility(View.VISIBLE);
+                                       String nombre = "" + task.getResult().get("nombre").toString();
+                                       tv1.setText(nombre);
+                                       String modelo = "" + task.getResult().get("modelo").toString();
+                                       tv2.setText(modelo);
+                                       String marca = "" + task.getResult().get("marca").toString();
+                                       tv3.setText(marca);
+                                       String tipo = "" + task.getResult().get("tipo").toString();
+                                       tv4.setText(tipo);
+                                       String estado = "" + task.getResult().get("estado").toString();
+                                       tv5.setText(estado);
+                                       Toast.makeText(vista.getContext(), "Datos encontrados", Toast.LENGTH_SHORT).show();
 
-                                       if (document.exists()) {
-                                           tv1.setVisibility(View.VISIBLE);
-                                           tv2.setVisibility(View.VISIBLE);
-                                           tv3.setVisibility(View.VISIBLE);
-                                           tv4.setVisibility(View.VISIBLE);
-                                           tv5.setVisibility(View.VISIBLE);
-                                           String nombre = "" +
-                                                   task.getResult().get("nombre").toString();
-                                           tv1.setText(nombre);
-                                           String modelo = "" +
-                                                   task.getResult().get("modelo").toString();
-                                           tv2.setText(modelo);
-                                           String marca = "" +
-                                                   task.getResult().get("marca").toString();
-                                           tv3.setText(marca);
-                                           String tipo = "" + task.getResult().get("tipo").toString();
-                                           tv4.setText(tipo);
-                                           String estado = "" +
-                                                   task.getResult().get("estado").toString();
-                                           tv5.setText(estado);
-                                           Toast.makeText(vista.getContext(), "Datos encontrados",
-                                                   Toast.LENGTH_SHORT).show();
-                                       } else {
-                                           tv1.setVisibility(View.INVISIBLE);
-                                           tv2.setVisibility(View.INVISIBLE);
-                                           tv3.setVisibility(View.INVISIBLE);
-                                           tv4.setVisibility(View.INVISIBLE);
-                                           tv5.setVisibility(View.INVISIBLE);
-                                           tv1.setText("");
-                                           tv2.setText("");
-                                           tv3.setText("");
-                                           tv4.setText("");
-                                           tv5.setText("");
-                                           placa.setText("");
-                                           Toast.makeText(vista.getContext(), "Datos no encontrados", Toast.LENGTH_SHORT).show();
-                                       }
                                    } else {
-                                       Toast.makeText(vista.getContext(), "Error al realizar la consulta", Toast.LENGTH_SHORT).show();
+                                       tv1.setVisibility(View.INVISIBLE);
+                                       tv2.setVisibility(View.INVISIBLE);
+                                       tv3.setVisibility(View.INVISIBLE);
+                                       tv4.setVisibility(View.INVISIBLE);
+                                       tv5.setVisibility(View.INVISIBLE);
+                                       tv1.setText("");
+                                       tv2.setText("");
+                                       tv3.setText("");
+                                       tv4.setText("");
+                                       tv5.setText("");
+                                       placa.setText("");
+                                       Toast.makeText(vista.getContext(), "Datos no encontrados", Toast.LENGTH_SHORT).show();
                                    }
+                               } else {
+                                   Toast.makeText(vista.getContext(), "Error al realizar la consulta", Toast.LENGTH_SHORT).show();
                                }
-                           });
+                           }
+                       });
                 }
             }
         });

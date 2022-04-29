@@ -12,10 +12,10 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20sp"
         android:layout_marginTop="10sp"
-        android:hint="Ingrese el ID de Cliente"
-        android:inputType="textPersonName"
-        android:padding="15sp" />
-
+        android:padding="15sp"
+        android:hint="Ingrese DUI del Cliente"
+        />
+    
     <EditText
         android:id="@+id/nombreClienteEditar"
         android:layout_width="match_parent"
