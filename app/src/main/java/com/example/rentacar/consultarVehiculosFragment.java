@@ -63,8 +63,8 @@ public class consultarVehiculosFragment extends Fragment {
                                        tv2 = vista.findViewById(R.id.modeloVehiculoConsultar);
                                        tv3 = vista.findViewById(R.id.MarcaVehiculoConsultar);
                                        tv4 = vista.findViewById(R.id.tipoVehiculoConsultarSpinner);
-                                       tv5 =
-                                               vista.findViewById(R.id.estadoVehiculoConsultarSpinner);
+                                       tv5 =vista.findViewById(R.id.estadoVehiculoConsultarSpinner);
+
                                        if (document.exists()) {
                                            tv1.setVisibility(View.VISIBLE);
                                            tv2.setVisibility(View.VISIBLE);

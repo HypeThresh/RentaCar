@@ -70,8 +70,6 @@ public class clienteConsultarFragment extends Fragment {
                         tv3.setText(vh);
 
 
-
-
                     }
                 });
 

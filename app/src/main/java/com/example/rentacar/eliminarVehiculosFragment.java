@@ -82,7 +82,6 @@ public class eliminarVehiculosFragment extends Fragment {
         btnEliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextView placa = vista.findViewById(R.id.numeroPlacaVehiculoEliminar);
                 String id = placa.getText().toString();
                 FirebaseFirestore db;
                 db = FirebaseFirestore.getInstance();

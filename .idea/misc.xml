@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/Clone repositorios/RentaCar/app/src/main/res/layout/fragment_cliente_editar.xml" value="0.2616822429906542" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/Clone repositorios/RentaCar/app/src/main/res/layout/fragment_cliente_eliminar.xml" value="0.3625" />
+        <entry key="..\:/Users/bryan/OneDrive/Escritorio/Clone repositorios/RentaCar/app/src/main/res/layout/fragment_eliminar_vehiculos.xml" value="0.28940217391304346" />
         <entry key="..\:/Users/bryan/OneDrive/Escritorio/Repositorios/RentaCar/app/src/main/res/layout/fragment_add_alq_.xml" value="0.33" />
         <entry key="..\:/Users/bryan/OneDrive/Escritorio/Repositorios/RentaCar/app/src/main/res/layout/fragment_cliente_consultar.xml" value="0.3625" />
         <entry key="..\:/Users/bryan/OneDrive/Escritorio/Repositorios/RentaCar/app/src/main/res/layout/fragment_cliente_editar.xml" value="0.3625" />

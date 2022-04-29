@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".clienteEliminarFragment">
 
     <EditText
@@ -73,5 +74,15 @@
         android:layout_gravity="start|bottom"
         android:layout_margin="15sp"
         />
+
+    <ImageView
+        android:id="@+id/imageSearchDel"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="10sp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/ic_action_name"
+        app:tint="@color/white" />
 
 </FrameLayout>
