@@ -26,8 +26,8 @@ public class list_alq_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-       View vista =  inflater.inflate(R.layout.fragment_list_alq_, container, false);
-        TextView idalq = vista.findViewById(R.id.txtIdAlq);
+        View vista =  inflater.inflate(R.layout.fragment_list_alq_, container, false);
+        //TextView idalq = vista.findViewById(R.id.txtIdAlq);
         Button consult = vista.findViewById(R.id.buttonConsult);
 
         consult.setOnClickListener(new View.OnClickListener() {
@@ -36,11 +36,8 @@ public class list_alq_Fragment extends Fragment {
                 TextView id, vehiculo, cliente;
 
                 FirebaseFirestore db;
-
                 db = FirebaseFirestore.getInstance();
 
-
-                id = vista.findViewById(R.id.txtIdAlq);
                 cliente = vista.findViewById(R.id.txtClient);
                 vehiculo = vista.findViewById(R.id.txtVehicle);
             }
