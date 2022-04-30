@@ -1,8 +1,10 @@
 package com.example.rentacar;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -42,70 +44,89 @@ public class eliminarVehiculosFragment extends Fragment {
         placa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(placa.getText().toString().isEmpty()){
-                    Toast.makeText(vista.getContext(), "Ingresa una placa", Toast.LENGTH_SHORT).show();
-                }else {
-                    FirebaseFirestore db;
-                    db = FirebaseFirestore.getInstance();
-                    db.collection("vehiculos").document(placa.getText().toString())
-                        .get()
-                        .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                            @Override
-                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                if (task.isSuccessful()) {
-                                    DocumentSnapshot document = task.getResult();
 
-                                    TextView tv1, tv2, tv3, tv4, tv5;
-                                    tv1 = vista.findViewById(R.id.nombreVehiculoEliminar);
-                                    tv2 = vista.findViewById(R.id.modeloVehiculoEliminar);
-                                    tv3 = vista.findViewById(R.id.marcaVehiculoEliminar);
-                                    tv4 = vista.findViewById(R.id.tipoVehiculoEliminar);
-                                    tv5 = vista.findViewById(R.id.estadoVehiculoEliminar);
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setCancelable(true);
+                builder.setTitle("CONSULTAR");
+                String mensaje = "Deseas consultar el vehiculo con la placa: " + placa.getText().toString();
+                builder.setMessage(mensaje);
+                builder.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        if(placa.getText().toString().isEmpty()){
+                            Toast.makeText(vista.getContext(), "Ingresa una placa", Toast.LENGTH_SHORT).show();
+                        }else {
+                            FirebaseFirestore db;
+                            db = FirebaseFirestore.getInstance();
+                            db.collection("vehiculos").document(placa.getText().toString())
+                                    .get()
+                                    .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                DocumentSnapshot document = task.getResult();
 
-                                    if (document.exists()){
+                                                TextView tv1, tv2, tv3, tv4, tv5;
+                                                tv1 = vista.findViewById(R.id.nombreVehiculoEliminar);
+                                                tv2 = vista.findViewById(R.id.modeloVehiculoEliminar);
+                                                tv3 = vista.findViewById(R.id.marcaVehiculoEliminar);
+                                                tv4 = vista.findViewById(R.id.tipoVehiculoEliminar);
+                                                tv5 = vista.findViewById(R.id.estadoVehiculoEliminar);
 
-                                        tv1.setVisibility(View.VISIBLE);
-                                        tv2.setVisibility(View.VISIBLE);
-                                        tv3.setVisibility(View.VISIBLE);
-                                        tv4.setVisibility(View.VISIBLE);
-                                        tv5.setVisibility(View.VISIBLE);
+                                                if (document.exists()){
 
-                                        String nombre = ""+task.getResult().getData().get("nombre");
-                                        tv1.setText(nombre);
-                                        String modelo = ""+task.getResult().getData().get("modelo");
-                                        tv2.setText(modelo);
-                                        String marca = ""+task.getResult().getData().get("marca");
-                                        tv3.setText(marca);
-                                        String tipo = ""+task.getResult().getData().get("tipo");
-                                        tv4.setText(tipo);
-                                        String estado = ""+task.getResult().getData().get("estado");
-                                        tv5.setText(estado);
+                                                    tv1.setVisibility(View.VISIBLE);
+                                                    tv2.setVisibility(View.VISIBLE);
+                                                    tv3.setVisibility(View.VISIBLE);
+                                                    tv4.setVisibility(View.VISIBLE);
+                                                    tv5.setVisibility(View.VISIBLE);
 
-                                        Toast.makeText(vista.getContext(), "Datos encontrados", Toast.LENGTH_SHORT).show();
+                                                    String nombre = ""+task.getResult().getData().get("nombre");
+                                                    tv1.setText(nombre);
+                                                    String modelo = ""+task.getResult().getData().get("modelo");
+                                                    tv2.setText(modelo);
+                                                    String marca = ""+task.getResult().getData().get("marca");
+                                                    tv3.setText(marca);
+                                                    String tipo = ""+task.getResult().getData().get("tipo");
+                                                    tv4.setText(tipo);
+                                                    String estado = ""+task.getResult().getData().get("estado");
+                                                    tv5.setText(estado);
 
-                                    }else{
+                                                    Toast.makeText(vista.getContext(), "Datos encontrados", Toast.LENGTH_SHORT).show();
 
-                                        tv1.setVisibility(View.INVISIBLE);
-                                        tv2.setVisibility(View.INVISIBLE);
-                                        tv3.setVisibility(View.INVISIBLE);
-                                        tv4.setVisibility(View.INVISIBLE);
-                                        tv5.setVisibility(View.INVISIBLE);
-                                        tv1.setText("");
-                                        tv2.setText("");
-                                        tv3.setText("");
-                                        tv4.setText("");
-                                        tv5.setText("");
+                                                }else{
 
-                                        Toast.makeText(vista.getContext(), "No encontrado", Toast.LENGTH_SHORT).show();
+                                                    tv1.setVisibility(View.INVISIBLE);
+                                                    tv2.setVisibility(View.INVISIBLE);
+                                                    tv3.setVisibility(View.INVISIBLE);
+                                                    tv4.setVisibility(View.INVISIBLE);
+                                                    tv5.setVisibility(View.INVISIBLE);
+                                                    tv1.setText("");
+                                                    tv2.setText("");
+                                                    tv3.setText("");
+                                                    tv4.setText("");
+                                                    tv5.setText("");
 
-                                    }
-                                }else {
-                                    Toast.makeText(vista.getContext(), "Error al realizar la consulta", Toast.LENGTH_SHORT).show();
-                                }
+                                                    Toast.makeText(vista.getContext(), "No encontrado", Toast.LENGTH_SHORT).show();
 
-                            }
-                        });
-                }
+                                                }
+                                            }else {
+                                                Toast.makeText(vista.getContext(), "Error al realizar la consulta", Toast.LENGTH_SHORT).show();
+                                            }
+
+                                        }
+                                    });
+                        }
+                    }
+                });
+                builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Navigation.findNavController(vista).navigate(R.id.gestionVehiculos);
+                    }
+                });
+                builder.create();
+                builder.show();
 
             }
         });
@@ -121,9 +142,12 @@ public class eliminarVehiculosFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 String id = placa.getText().toString();
-                FirebaseFirestore db;
-                db = FirebaseFirestore.getInstance();
-                db.collection("vehiculos").document(id)
+                if(placa.getText().toString().isEmpty()){
+                    Toast.makeText(vista.getContext(), "Ingresa una placa", Toast.LENGTH_SHORT).show();
+                }else {
+                    FirebaseFirestore db;
+                    db = FirebaseFirestore.getInstance();
+                    db.collection("vehiculos").document(id)
                         .update("eliminado", 1)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -155,6 +179,7 @@ public class eliminarVehiculosFragment extends Fragment {
                                 Toast.makeText(vista.getContext(), "No se pudo realizar la accion", Toast.LENGTH_SHORT).show();
                             }
                         });
+                }
             }
         });
 

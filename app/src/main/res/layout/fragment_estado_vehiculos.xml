@@ -19,20 +19,6 @@
         />
 
     <EditText
-        android:id="@+id/nombreVehiculoEstado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:layout_marginHorizontal="20sp"
-        android:layout_marginTop="90sp"
-        android:padding="15sp"
-        android:hint="Nombre"
-        android:background="@color/btnColor"
-        android:visibility="invisible"
-        android:focusable="false"
-        />
-
-    <EditText
         android:id="@+id/modeloVehiculoEstado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -78,13 +64,13 @@
         android:id="@+id/estadoVehiculoSpinnerEstado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="@array/estadoVehiculo"
         android:layout_marginHorizontal="10sp"
-        android:layout_marginTop="380sp"
-        android:padding="15sp"
+        android:layout_marginTop="90sp"
         android:background="@color/white"
-        android:visibility="invisible"
-        />
+        android:entries="@array/estadoVehiculo"
+        
+        android:padding="15sp"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/btnActualizarEstadoVehiculo"
