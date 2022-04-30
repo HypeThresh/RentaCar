@@ -135,7 +135,7 @@ public class clienteEliminarFragment extends Fragment {
         btnDel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+
 
                 String id = dui.getText().toString();
                 if(dui.getText().toString().isEmpty()){
