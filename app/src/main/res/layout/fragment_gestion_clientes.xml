@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".gestionClientesFragment"
-    android:background="@color/bgColor">
+    android:background="@color/white">
 
     <Button
         android:id="@+id/btnRegistrarCliente"
@@ -45,8 +45,8 @@
 
     <ImageView
         android:id="@+id/imgBtnBack"
-        android:layout_width="39dp"
-        android:layout_height="36dp"
+        android:layout_width="47dp"
+        android:layout_height="42dp"
         android:src="@drawable/ic_back"
         app:tint="@color/btnColor" />
 

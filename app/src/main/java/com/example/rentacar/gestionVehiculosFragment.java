@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class gestionVehiculosFragment extends Fragment {
 
@@ -28,6 +29,7 @@ public class gestionVehiculosFragment extends Fragment {
         Button btn4 = vista.findViewById(R.id.btnEliminarVehiculo);
         Button btn5 = vista.findViewById(R.id.btnAsignarEstadoVehiculo);
         Button btn6 = vista.findViewById(R.id.btnRegresarHomeVehiculo);
+        ImageView btn7 = vista.findViewById(R.id.imgBtnBack);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +67,13 @@ public class gestionVehiculosFragment extends Fragment {
         });
 
         btn6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.inicioFragment);
+            }
+        });
+
+        btn7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.inicioFragment);

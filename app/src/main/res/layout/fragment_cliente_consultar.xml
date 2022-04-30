@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bgColor"
     tools:context=".clienteConsultarFragment">
 
     <EditText
@@ -13,6 +14,7 @@
         android:layout_marginLeft="20sp"
         android:layout_marginRight="20sp"
         android:layout_marginTop="10sp"
+        android:background="@color/btnColor"
         android:padding="15sp"
         android:hint="Ingrese el DUI de Cliente">
     </EditText>
@@ -25,6 +27,7 @@
         android:layout_marginHorizontal="20sp"
         android:layout_marginTop="80sp"
         android:padding="15sp"
+        android:textColor="@color/btnColor"
         android:focusable="false"
         android:visibility="invisible"
         android:text="Listado de vehículos en alquiler:" />
@@ -35,7 +38,7 @@
         android:layout_height="482dp"
         android:layout_marginTop="150dp"
         android:focusable="false"
-
+        android:background="@color/btnColor"
         android:gravity="center_horizontal"
         android:visibility="invisible">
 

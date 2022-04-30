@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".gestionAlquilerFragment"
-    android:background="@color/bgColor"
+    android:background="@color/white"
     >
 
     <Button
@@ -46,8 +46,8 @@
 
     <ImageView
         android:id="@+id/imgBtnBack"
-        android:layout_width="39dp"
-        android:layout_height="36dp"
+        android:layout_width="46dp"
+        android:layout_height="43dp"
         android:src="@drawable/ic_back"
         app:tint="@color/btnColor" />
 

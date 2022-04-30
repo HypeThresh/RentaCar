@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class gestionClientesFragment extends Fragment {
 
@@ -26,6 +27,7 @@ public class gestionClientesFragment extends Fragment {
         Button btn2 = vista.findViewById(R.id.btnEditarCliente);
         Button btn3 = vista.findViewById(R.id.btnEliminarCliente);
         Button btn4 = vista.findViewById(R.id.btnConsultarCliente);
+        ImageView btn5 = vista.findViewById(R.id.imgBtnBack);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +54,13 @@ public class gestionClientesFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.clienteConsultarFragment);
+            }
+        });
+
+        btn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.inicioFragment);
             }
         });
 

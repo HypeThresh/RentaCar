@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bgColor"
     tools:context=".clienteRegistrarFragment">
 
     <EditText
@@ -13,6 +14,7 @@
         android:layout_marginHorizontal="20sp"
         android:layout_marginTop="10sp"
         android:padding="15sp"
+        android:background="@color/btnColor"
         android:hint="Nombres"
         />
 
@@ -24,6 +26,7 @@
         android:layout_marginHorizontal="20sp"
         android:layout_marginTop="90sp"
         android:padding="15sp"
+        android:background="@color/btnColor"
         android:hint="DUI"
         />
 
@@ -35,6 +38,7 @@
         android:layout_marginHorizontal="20sp"
         android:layout_marginTop="170sp"
         android:padding="15sp"
+        android:background="@color/btnColor"
         android:hint="Teléfono"
         />
 
@@ -45,6 +49,7 @@
         android:layout_marginHorizontal="20sp"
         android:layout_marginTop="240sp"
         android:hint="Dirección"
+        android:background="@color/btnColor"
         android:inputType="textPersonName"
         android:padding="15sp" />
 
