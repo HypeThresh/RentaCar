@@ -150,10 +150,10 @@ public class editarVehiculosFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.gestionVehiculos);
             }
         });
+
         btnEditar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 vehiculosClass actualizarVehiculo = new vehiculosClass(tv1.getText().toString(),
                         tv3.getText().toString(),tv2.getText().toString(),
                         sp1.getSelectedItem().toString(),sp2.getSelectedItem().toString(),0);

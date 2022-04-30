@@ -129,7 +129,7 @@ public class estadoVehiculosFragment extends Fragment {
                                 sp1 = vista.findViewById(R.id.estadoVehiculoSpinnerEstado);
                                 if (document.exists()) {
                                     Map<String, Object> update = new HashMap<>();
-                                    update.put("tipo", sp1.getSelectedItem().toString());
+                                    update.put("estado", sp1.getSelectedItem().toString());
 
                                     db.collection("vehiculos")
                                             .document(placa.getText().toString())
