@@ -6,10 +6,12 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,46 +42,84 @@ public class editarVehiculosFragment extends Fragment {
         // Inflate the layout for this fragment
         View vista = inflater.inflate(R.layout.fragment_editar_vehiculos, container, false);
 
-        TextView placa = vista.findViewById(R.id.numeroPlacaVehiculoEditar);
+        EditText placa = vista.findViewById(R.id.numeroPlacaVehiculoEditar);
         Button btnRegresar = vista.findViewById(R.id.btnRegresarEditarVehiculo);
         Button btnEditar = vista.findViewById(R.id.btnEditarVehiculoEdit);
 
+
         TextView tv1, tv2, tv3;
         Spinner sp1, sp2;
-
         tv1 = vista.findViewById(R.id.nombreVehiculoEditar);
-        tv1.setVisibility(View.VISIBLE);
         tv2 = vista.findViewById(R.id.modeloVehiculoEditar);
-        tv2.setVisibility(View.VISIBLE);
         tv3 = vista.findViewById(R.id.MarcaVehiculoEditar);
-        tv3.setVisibility(View.VISIBLE);
         sp1 = vista.findViewById(R.id.tipoVehiculoEditarSpinner);
-        sp1.setVisibility(View.VISIBLE);
         sp2 = vista.findViewById(R.id.estadoVehiculoEditarSpinner);
-        sp2.setVisibility(View.VISIBLE);
-
         placa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FirebaseFirestore db;
-                db = FirebaseFirestore.getInstance();
-                db.collection("vehiculos").document(placa.getText().toString())
-                        .get()
-                        .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                            @Override
-                            public void onSuccess(DocumentSnapshot documentSnapshot) {
 
-                            String nombre = "" + documentSnapshot.getData().get("nombre");
-                            tv1.setText(nombre);
-                            String modelo = "" + documentSnapshot.getData().get("modelo");
-                            tv2.setText(modelo);
-                            String marca = "" + documentSnapshot.getData().get("marca");
-                            tv3.setText(marca);
-                            Toast.makeText(vista.getContext(), "Datos encontrados", Toast.LENGTH_SHORT).show();
-                        }
-                });
+                if(placa.getText().toString().isEmpty()){
+                    Toast.makeText(vista.getContext(), "Ingresa una placa", Toast.LENGTH_SHORT).show();
+                }else {
+
+                    FirebaseFirestore db;
+                    db = FirebaseFirestore.getInstance();
+                    db.collection("vehiculos").document(placa.getText().toString())
+                        .get()
+                        .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+
+                                if (task.isSuccessful()) {
+                                    DocumentSnapshot document = task.getResult();
+
+                                    if (document.exists()){
+                                        tv1.setVisibility(View.VISIBLE);
+                                        tv2.setVisibility(View.VISIBLE);
+                                        tv3.setVisibility(View.VISIBLE);
+                                        sp1.setVisibility(View.VISIBLE);
+                                        sp2.setVisibility(View.VISIBLE);
+
+                                        String nombre = "" + task.getResult().getData().get("nombre");
+                                        tv1.setText(nombre);
+                                        String modelo = "" + task.getResult().getData().get("modelo");
+                                        tv2.setText(modelo);
+                                        String marca = "" + task.getResult().getData().get("marca");
+                                        tv3.setText(marca);
+                                        String tipo = "" + task.getResult().getData().get("tipo");
+                                        sp1.setSelection(tipos(tipo));
+
+                                        String estado = "" + task.getResult().getData().get("estado");
+                                        sp2.setSelection(1);
+                                        Toast.makeText(vista.getContext(), "Datos encontrados", Toast.LENGTH_SHORT).show();
+
+                                    }else{
+                                        tv1.setVisibility(View.INVISIBLE);
+                                        tv2.setVisibility(View.INVISIBLE);
+                                        tv3.setVisibility(View.INVISIBLE);
+                                        sp1.setVisibility(View.INVISIBLE);
+                                        sp2.setVisibility(View.INVISIBLE);
+                                        tv1.setText("");
+                                        tv2.setText("");
+                                        tv3.setText("");
+
+                                        Toast.makeText(vista.getContext(), "Datos no encontrados", Toast.LENGTH_SHORT).show();
+                                    }
+
+                                }else{
+                                    Toast.makeText(vista.getContext(), "Error al realizar la consulta", Toast.LENGTH_SHORT).show();
+                                }
+
+                            }
+                        });
+
+                }
+
             }
         });
+
+
+
         btnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,6 +129,7 @@ public class editarVehiculosFragment extends Fragment {
         btnEditar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 vehiculosClass actualizarVehiculo = new vehiculosClass(tv1.getText().toString(),
                         tv3.getText().toString(),tv2.getText().toString(),
                         sp1.getSelectedItem().toString(),sp2.getSelectedItem().toString(),0);
@@ -126,6 +167,22 @@ public class editarVehiculosFragment extends Fragment {
             }
         });
 
+
         return vista;
+    }
+
+    public int tipos(String tipo){
+
+        int posicion = 0;
+        if(tipo == "Coche"){
+            posicion = 0;
+        }else if (tipo == "Microbus"){
+            posicion = 1;
+        }else if (tipo == "Furgonetas de carga"){
+            posicion = 2;
+        }else if (tipo == "Camion"){
+            posicion = 3;
+        }
+        return posicion;
     }
 }

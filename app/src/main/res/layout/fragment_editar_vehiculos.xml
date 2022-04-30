@@ -78,10 +78,9 @@
         android:id="@+id/btnEditarVehiculoEdit"
         android:layout_width="175sp"
         android:layout_height="wrap_content"
-        android:text="Editar"
         android:layout_gravity="end|bottom"
         android:layout_margin="15sp"
-        />
+        android:text="Editar" />
 
     <Button
         android:id="@+id/btnRegresarEditarVehiculo"
