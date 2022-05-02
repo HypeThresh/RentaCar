@@ -75,6 +75,9 @@ public class alqLista extends Fragment {
                             @Override
                             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                 if (task.isSuccessful()) {
+                                    if(task.getResult().isEmpty()){
+                                        Toast.makeText(vista.getContext(), "No se encontraron registros", Toast.LENGTH_SHORT).show();
+                                    }
                                     list.clear();
                                     for (QueryDocumentSnapshot document : task.getResult()) {
                                         aux.setDocumento(document.getId());

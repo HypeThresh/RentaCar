@@ -10,20 +10,20 @@
 
     <Button
         android:id="@+id/btnAlmAlq"
-        android:layout_width="175sp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="start|top"
         android:layout_marginHorizontal="15sp"
-        android:layout_marginTop="100sp"
+        android:layout_marginTop="250sp"
         android:text="@string/almacenar" />
 
     <Button
         android:id="@+id/btnConsultarAlq"
-        android:layout_width="175sp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="end|top"
+        android:layout_gravity="end|bottom"
         android:layout_marginHorizontal="15sp"
-        android:layout_marginTop="100sp"
+        android:layout_marginBottom="300sp"
         android:text="@string/consultar" />
 
     <ImageView
