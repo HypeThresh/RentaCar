@@ -52,12 +52,6 @@
             android:id="@+id/action_gestionAlquilerFragment_to_add_alq_Fragment"
             app:destination="@id/add_alq_Fragment" />
         <action
-            android:id="@+id/action_gestionAlquilerFragment_to_edit_alq_Fragment"
-            app:destination="@id/edit_alq_Fragment" />
-        <action
-            android:id="@+id/action_gestionAlquilerFragment_to_del_alq_Fragment"
-            app:destination="@id/del_alq_Fragment" />
-        <action
             android:id="@+id/action_gestionAlquilerFragment_to_alqLista"
             app:destination="@id/alqLista" />
     </fragment>
@@ -117,30 +111,6 @@
             app:destination="@id/inicioFragment" />
     </fragment>
     <fragment
-        android:id="@+id/edit_alq_Fragment"
-        android:name="com.example.rentacar.edit_alq_Fragment"
-        android:label="fragment_edit_alq_"
-        tools:layout="@layout/fragment_edit_alq_" >
-        <action
-            android:id="@+id/action_edit_alq_Fragment_to_gestionAlquilerFragment"
-            app:destination="@id/gestionAlquilerFragment" />
-        <action
-            android:id="@+id/action_edit_alq_Fragment_to_inicioFragment"
-            app:destination="@id/inicioFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/del_alq_Fragment"
-        android:name="com.example.rentacar.del_alq_Fragment"
-        android:label="fragment_del_alq_"
-        tools:layout="@layout/fragment_del_alq_" >
-        <action
-            android:id="@+id/action_del_alq_Fragment_to_gestionAlquilerFragment"
-            app:destination="@id/gestionAlquilerFragment" />
-        <action
-            android:id="@+id/action_del_alq_Fragment_to_inicioFragment"
-            app:destination="@id/inicioFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/clienteRegistrarFragment"
         android:name="com.example.rentacar.clienteRegistrarFragment"
         android:label="fragment_cliente_registrar"
@@ -171,5 +141,17 @@
         <action
             android:id="@+id/action_alqLista_to_gestionAlquilerFragment"
             app:destination="@id/gestionAlquilerFragment" />
+        <action
+            android:id="@+id/action_alqLista_to_edit_alq_Fragment"
+            app:destination="@id/edit_alq_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/edit_alq_Fragment"
+        android:name="com.example.rentacar.edit_alq_Fragment"
+        android:label="fragment_edit_alq_"
+        tools:layout="@layout/fragment_edit_alq_" >
+        <action
+            android:id="@+id/action_edit_alq_Fragment_to_alqLista2"
+            app:destination="@id/alqLista" />
     </fragment>
 </navigation>

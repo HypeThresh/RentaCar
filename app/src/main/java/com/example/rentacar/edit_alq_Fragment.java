@@ -20,7 +20,6 @@ public class edit_alq_Fragment extends Fragment {
         // Required empty public constructor
     }
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +31,9 @@ public class edit_alq_Fragment extends Fragment {
         // Inflate the layout for this fragment
         View vista = inflater.inflate(R.layout.fragment_edit_alq_, container, false);
 
+        String documento = getArguments().getString("documento");
         EditText idAlquiler = vista.findViewById(R.id.editIdNumb);
+        idAlquiler.setText(documento);
         Button btn = vista.findViewById(R.id.btnBck2);
         ImageButton btnImagen = vista.findViewById(R.id.imageButton);
 
@@ -64,7 +65,7 @@ public class edit_alq_Fragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.gestionAlquilerFragment);
+
             }
         });
 

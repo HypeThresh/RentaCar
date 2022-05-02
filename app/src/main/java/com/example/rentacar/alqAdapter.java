@@ -1,6 +1,7 @@
 package com.example.rentacar;
 
 import android.content.DialogInterface;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -98,6 +99,15 @@ public class alqAdapter extends RecyclerView.Adapter<alqAdapter.ViewHolder> {
                 });
                 builder.create();
                 builder.show();
+            }
+        });
+
+        viewHolder.editar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString("documento", localDataSet.get(position).getDocumento());
+                Navigation.findNavController(view).navigate(R.id.edit_alq_Fragment, bundle);
             }
         });
     }

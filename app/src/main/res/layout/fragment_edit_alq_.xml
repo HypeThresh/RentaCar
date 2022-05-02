@@ -36,14 +36,14 @@
 
     <Button
         android:id="@+id/btnBck2"
-        android:layout_width="155dp"
-        android:layout_height="30dp"
+        android:layout_width="161dp"
+        android:layout_height="23dp"
         android:layout_gravity="start"
         android:layout_marginLeft="50sp"
         android:layout_marginTop="500dp"
         android:background="@color/white"
-        android:textColor="@color/btnColor"
-        android:text="Regresar" />
+        android:text="Regresar"
+        android:textColor="@color/btnColor" />
 
     <EditText
         android:id="@+id/editTextDate"
