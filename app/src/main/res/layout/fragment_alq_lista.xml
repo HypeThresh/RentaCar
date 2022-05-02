@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".alqLista">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewListAalq"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="10sp"
+        android:layout_marginTop="80sp"
+        android:layout_marginBottom="10sp" />
+
+    <EditText
+        android:id="@+id/fechaConsult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="13"
+        android:inputType="date"
+        android:hint="Ingrese una fecha a buscar"
+        android:layout_gravity="end"
+        android:layout_marginRight="16sp"
+        android:layout_marginTop="10sp"
+        android:clickable="true"
+        android:focusable="false"
+        ></EditText>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:layout_gravity="end"
+        android:layout_marginTop="10sp"
+        android:layout_marginRight="16sp"
+        android:src="@android:drawable/ic_menu_search" />
+</FrameLayout>

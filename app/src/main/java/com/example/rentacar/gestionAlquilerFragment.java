@@ -27,8 +27,6 @@ public class gestionAlquilerFragment extends Fragment {
         ImageView img = vista.findViewById(R.id.imgBtnBack);
         Button btnAddAlq = vista.findViewById(R.id.btnAlmAlq);
         Button btnConsAlq = vista.findViewById(R.id.btnConsultarAlq);
-        Button btnEditAlq = vista.findViewById(R.id.btnEditarAlq);
-        Button btnDltAlq = vista.findViewById(R.id.btnEliminarAlq);
 
         btnAddAlq.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,21 +37,10 @@ public class gestionAlquilerFragment extends Fragment {
         btnConsAlq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.list_alq_Fragment);
+                Navigation.findNavController(view).navigate(R.id.alqLista);
             }
         });
-        btnDltAlq.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.del_alq_Fragment);
-            }
-        });
-        btnEditAlq.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.edit_alq_Fragment);
-            }
-        });
+
         img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

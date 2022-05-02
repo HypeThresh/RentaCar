@@ -58,8 +58,8 @@
             android:id="@+id/action_gestionAlquilerFragment_to_del_alq_Fragment"
             app:destination="@id/del_alq_Fragment" />
         <action
-            android:id="@+id/action_gestionAlquilerFragment_to_list_alq_Fragment"
-            app:destination="@id/list_alq_Fragment" />
+            android:id="@+id/action_gestionAlquilerFragment_to_alqLista"
+            app:destination="@id/alqLista" />
     </fragment>
     <fragment
         android:id="@+id/gestionClientesFragment"
@@ -141,18 +141,6 @@
             app:destination="@id/inicioFragment" />
     </fragment>
     <fragment
-        android:id="@+id/list_alq_Fragment"
-        android:name="com.example.rentacar.list_alq_Fragment"
-        android:label="fragment_list_alq_"
-        tools:layout="@layout/fragment_list_alq_" >
-        <action
-            android:id="@+id/action_list_alq_Fragment_to_gestionAlquilerFragment"
-            app:destination="@id/gestionAlquilerFragment" />
-        <action
-            android:id="@+id/action_list_alq_Fragment_to_inicioFragment"
-            app:destination="@id/inicioFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/clienteRegistrarFragment"
         android:name="com.example.rentacar.clienteRegistrarFragment"
         android:label="fragment_cliente_registrar"
@@ -172,4 +160,16 @@
         android:name="com.example.rentacar.clienteConsultarFragment"
         android:label="fragment_cliente_consultar"
         tools:layout="@layout/fragment_cliente_consultar" />
+    <fragment
+        android:id="@+id/alqLista"
+        android:name="com.example.rentacar.alqLista"
+        android:label="fragment_alq_lista"
+        tools:layout="@layout/fragment_alq_lista" >
+        <action
+            android:id="@+id/action_alqLista_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+        <action
+            android:id="@+id/action_alqLista_to_gestionAlquilerFragment"
+            app:destination="@id/gestionAlquilerFragment" />
+    </fragment>
 </navigation>
