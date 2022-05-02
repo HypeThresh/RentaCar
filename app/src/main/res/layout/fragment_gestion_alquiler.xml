@@ -26,24 +26,6 @@
         android:layout_marginTop="100sp"
         android:text="@string/consultar" />
 
-    <Button
-        android:id="@+id/btnEditarAlq"
-        android:layout_width="175sp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:layout_marginHorizontal="15sp"
-        android:layout_marginTop="250sp"
-        android:text="@string/editar" />
-
-    <Button
-        android:id="@+id/btnEliminarAlq"
-        android:layout_width="175sp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_marginHorizontal="15sp"
-        android:layout_marginTop="250sp"
-        android:text="@string/eliminar"  />
-
     <ImageView
         android:id="@+id/imgBtnBack"
         android:layout_width="46dp"
