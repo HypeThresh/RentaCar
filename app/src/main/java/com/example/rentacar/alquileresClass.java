@@ -8,9 +8,9 @@ public class alquileresClass {
     public String fechaFin;
     public String alquilado;
 
-    public alquileresClass(String vehiculo, String cliente, String fechaIni, String fechaFin,String alquilado){
-        this.clienteDui = cliente;
+    public alquileresClass(String cliente, String vehiculo, String fechaIni, String fechaFin,String alquilado){
         this.vehiculoPlaca = vehiculo;
+        this.clienteDui = cliente;
         this.fechaIni = fechaIni;
         this.fechaFin = fechaFin;
         this.alquilado = alquilado;

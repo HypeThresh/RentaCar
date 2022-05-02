@@ -19,28 +19,21 @@
             android:text="TextView"
             android:textColor="@color/black" />
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/viewPlaca"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:textColor="@color/black" />
 
-            <TextView
-                android:id="@+id/viewPlaca"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:id="@+id/viewEstado"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView"
-                android:textColor="@color/black" />
-
-        </LinearLayout>
+        <TextView
+            android:id="@+id/viewEstado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:textColor="@color/black" />
 
         <LinearLayout
             android:layout_width="match_parent"

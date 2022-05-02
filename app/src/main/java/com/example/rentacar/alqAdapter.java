@@ -50,8 +50,8 @@ public class alqAdapter extends RecyclerView.Adapter<alqAdapter.ViewHolder> {
         viewHolder.dui.setText("Dui: "+localDataSet.get(position).getClienteDui());
         viewHolder.placa.setText("Placa del vehiculo: "+localDataSet.get(position).getVehiculoPlaca());
         viewHolder.estado.setText("Estado: "+localDataSet.get(position).getAlquilado());
-        viewHolder.fechaIni.setText("Fecha de inicio: "+localDataSet.get(position).getFechaIni());
-        viewHolder.fechaFin.setText("Fecha de entrega: "+localDataSet.get(position).getFechaFin());
+        viewHolder.fechaIni.setText("Fecha de inicio:\n"+localDataSet.get(position).getFechaIni());
+        viewHolder.fechaFin.setText("Fecha de entrega:\n"+localDataSet.get(position).getFechaFin());
     }
 
     // Return the size of your dataset (invoked by the layout manager)
