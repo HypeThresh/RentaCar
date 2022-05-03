@@ -30,7 +30,10 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class add_alq_Fragment extends Fragment {
 
@@ -124,9 +127,42 @@ public class add_alq_Fragment extends Fragment {
                                                     if (task.isSuccessful()) {
                                                         DocumentSnapshot document = task.getResult();
                                                         if (document.exists()) {
+                                                            long dias = 0;
+                                                            String tipo = document.get("tipo").toString();
+                                                            long total = 0;
+
+                                                            try {
+                                                                Date fechaInicio;
+                                                                Date fechaFin;
+                                                                SimpleDateFormat date = new SimpleDateFormat("dd / MM / yyyy");
+                                                                fechaInicio = date.parse(txtFechaIni.getText().toString());
+                                                                fechaFin = date.parse(txtFechaFin.getText().toString());
+                                                                long diff = fechaFin.getTime() - fechaInicio.getTime();
+                                                                dias = diff / (1000*60*60*24);
+                                                            } catch (ParseException e) {
+                                                                e.printStackTrace();
+                                                            }
+
+                                                            switch (tipo) {
+                                                                case "Coche":
+                                                                    total = (dias * 65);
+                                                                    break;
+                                                                case "Microbus":
+                                                                    total = (dias * 50) + (20);
+                                                                    break;
+                                                                case "Furgonetas de carga":
+                                                                    total = (dias * 70);
+                                                                    break;
+                                                                case "Camion":
+                                                                    total = (dias * 75);
+                                                                    break;
+                                                            }
+                                                            Toast.makeText(bas.getContext(), "Total a pagar " + total, Toast.LENGTH_LONG).show();
                                                             // -------------------------------------------------------------
                                                             alquileresClass nuevoAlquiler = new alquileresClass(txtClient.getText().toString(),
-                                                                    txtVehicle.getText().toString(),txtFechaIni.getText().toString(),txtFechaFin.getText().toString(),"Alquilado");
+                                                                    txtVehicle.getText().toString(),txtFechaIni.getText().toString(),
+                                                                    txtFechaFin.getText().toString(),"Alquilado");
+                                                            nuevoAlquiler.setPago(total+"");
 
                                                             db.collection("alquileres")
                                                                     .add(nuevoAlquiler)// objeto nuevo

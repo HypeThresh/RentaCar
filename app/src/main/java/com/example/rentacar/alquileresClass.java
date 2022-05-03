@@ -7,6 +7,7 @@ public class alquileresClass {
     public String fechaIni;
     public String fechaFin;
     public String alquilado;
+    public String pago;
 
     public alquileresClass(String cliente, String vehiculo, String fechaIni, String fechaFin,String alquilado){
         this.vehiculoPlaca = vehiculo;
@@ -15,6 +16,10 @@ public class alquileresClass {
         this.fechaFin = fechaFin;
         this.alquilado = alquilado;
     }
+
+    public String getPago() { return pago; }
+
+    public void setPago(String pago) { this.pago = pago; }
 
     public String getDocumento() { return documento; }
 
