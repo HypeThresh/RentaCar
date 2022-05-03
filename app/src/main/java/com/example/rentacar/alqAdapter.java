@@ -107,6 +107,11 @@ public class alqAdapter extends RecyclerView.Adapter<alqAdapter.ViewHolder> {
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
                 bundle.putString("documento", localDataSet.get(position).getDocumento());
+                bundle.putString("cliente", localDataSet.get(position).getClienteDui());
+                bundle.putString("vehiculo", localDataSet.get(position).getVehiculoPlaca());
+                bundle.putString("fecha", localDataSet.get(position).getFechaIni());
+                bundle.putString("fechaFin", localDataSet.get(position).getFechaFin());
+                bundle.putString("estado", localDataSet.get(position).getAlquilado());
                 Navigation.findNavController(view).navigate(R.id.edit_alq_Fragment, bundle);
             }
         });

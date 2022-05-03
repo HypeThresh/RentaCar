@@ -7,43 +7,54 @@
     tools:context=".edit_alq_Fragment"
     android:background="@color/bgColor">
 
-    <Spinner
+    <EditText
         android:id="@+id/spinVeh"
         android:layout_width="235dp"
         android:layout_height="25dp"
         android:layout_marginTop="160dp"
         android:layout_gravity="center_horizontal"
-        android:background="@color/white"/>
+        android:inputType="text"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:focusable="false"
+        />
 
-    <Spinner
+    <EditText
         android:id="@+id/spinCln"
         android:layout_width="235dp"
         android:layout_height="25dp"
         android:layout_marginTop="80dp"
         android:background="@color/icColor"
-        android:layout_gravity="center_horizontal" />
+        android:textColor="@color/black"
+        android:layout_gravity="center_horizontal"
+        android:inputType="text"
+        android:focusable="false"
+        />
 
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="155dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:layout_marginTop="500dp"
-        android:layout_marginRight="50sp"
+        android:layout_marginRight="40sp"
         android:background="@color/btnColor"
         android:src="@drawable/ic_action_edit"
-        app:tint="@color/white" />
+        app:tint="@color/white"
+        android:padding="13sp"
+        />
 
     <Button
         android:id="@+id/btnBck2"
-        android:layout_width="161dp"
-        android:layout_height="23dp"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:layout_marginLeft="50sp"
+        android:layout_marginLeft="40sp"
         android:layout_marginTop="500dp"
         android:background="@color/white"
         android:text="Regresar"
-        android:textColor="@color/btnColor" />
+        android:textColor="@color/btnColor"
+        />
 
     <EditText
         android:id="@+id/editTextDate"
@@ -54,29 +65,31 @@
         android:layout_gravity="center|top"
         android:layout_marginTop="240dp"
         android:ems="10"
-        android:inputType="date" />
+        android:inputType="date"
+        android:focusable="false"
+        />
 
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/btnColor"
-        android:layout_marginTop="160dp"
-        android:layout_marginLeft="20sp"
         android:layout_gravity="start"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="160dp"
         android:gravity="start"
-        android:text="Vehiculo: " />
+        android:text="Vehiculo: "
+        android:textColor="@color/btnColor" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/btnColor"
-        android:layout_marginTop="80dp"
-        android:layout_marginLeft="20sp"
         android:layout_gravity="start"
-        android:text="Cliente: " />
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="80dp"
+        android:text="Cliente: "
+        android:textColor="@color/btnColor" />
 
     <TextView
         android:id="@+id/textView6"
@@ -87,28 +100,16 @@
         android:layout_marginLeft="20sp"
         android:layout_gravity="start"
         android:text="Fecha: " />
+
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/btnColor"
-        android:layout_marginTop="320dp"
-        android:layout_marginLeft="20sp"
         android:layout_gravity="start"
-        android:text="Fecha fin: " />
-
-    <EditText
-        android:id="@+id/editIdNumb"
-        android:layout_width="134dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:ems="10"
-        android:hint="Ingrese un Id: "
-        android:inputType="number"
-        android:layout_marginTop="40dp"
-        android:textColor="@color/btnColor"
-        android:background="@color/btnColor"
-        android:textColorHint="@color/white" />
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="320dp"
+        android:text="Fecha fin: "
+        android:textColor="@color/btnColor" />
 
     <EditText
         android:id="@+id/delDateReg"
@@ -119,6 +120,23 @@
         android:layout_gravity="center|top"
         android:layout_marginTop="320dp"
         android:ems="10"
-        android:inputType="date" />
+        android:inputType="date"
+        android:focusable="false"
+        android:clickable="true"
+        />
+
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Entregado"
+        android:padding="6sp"
+        android:layout_marginTop="400sp"
+        android:layout_marginLeft="20sp"
+        android:textColor="@color/black"
+        />
+
 
 </FrameLayout>
