@@ -54,31 +54,37 @@ public class almacenarVehiculosFragment extends Fragment {
                 spnTipo = vista.findViewById(R.id.tipoVehiculoAlmacenarSpinner);
                 spnEstado = vista.findViewById(R.id.estadoVehiculoAlmacenarSpinner);
 
-                //Conexion a bd
-                FirebaseFirestore db;
-                db = FirebaseFirestore.getInstance();
+                if (txtNombre.getText().toString().isEmpty() || txtModelo.getText().toString().isEmpty() ||
+                        txtPlaca.getText().toString().isEmpty() || txtMarca.getText().toString().isEmpty()) {
+                    Toast.makeText(vista.getContext(), "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
+                } else {
+                    //Conexion a bd
+                    FirebaseFirestore db;
+                    db = FirebaseFirestore.getInstance();
 
-                vehiculosClass nuevoVehiculo = new vehiculosClass(txtNombre.getText().toString(),
-                        txtMarca.getText().toString(),txtModelo.getText().toString(),
-                        spnTipo.getSelectedItem().toString(),spnEstado.getSelectedItem().toString(),0
-                        );
+                    vehiculosClass nuevoVehiculo = new vehiculosClass(txtNombre.getText().toString(),
+                            txtMarca.getText().toString(), txtModelo.getText().toString(),
+                            spnTipo.getSelectedItem().toString(), spnEstado.getSelectedItem().toString(), 0
+                    );
 
-                db.collection("vehiculos")
-                        .document(txtPlaca.getText().toString())
-                        .set(nuevoVehiculo)// objeto nuevo
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                Toast.makeText(vista.getContext(),
-                                        "REGISTRO INSERTADO CON EXITO", Toast.LENGTH_SHORT).show();
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(vista.getContext(),
-                                "HUBO UN ERROR EN EL PROCESO", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                    db.collection("vehiculos")
+                            .document(txtPlaca.getText().toString())
+                            .set(nuevoVehiculo)// objeto nuevo
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Toast.makeText(vista.getContext(),
+                                            "REGISTRO INSERTADO CON EXITO", Toast.LENGTH_SHORT).show();
+                                    Navigation.findNavController(view).navigate(R.id.gestionVehiculos);
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(vista.getContext(),
+                                    "HUBO UN ERROR EN EL PROCESO", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
             }
         });
 

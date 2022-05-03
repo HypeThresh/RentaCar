@@ -107,19 +107,23 @@ public class add_alq_Fragment extends Fragment {
                 txtClient = bas.findViewById(R.id.clienteDuiAlq);
                 txtVehicle = bas.findViewById(R.id.placaVehAlq);
 
-                FirebaseFirestore db;
-                db = FirebaseFirestore.getInstance();
+                if (txtClient.getText().toString().isEmpty() || txtVehicle.getText().toString().isEmpty() ||
+                        txtFechaIni.getText().toString().isEmpty() || txtFechaFin.getText().toString().isEmpty()) {
+                    Toast.makeText(bas.getContext(), "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
+                }else{
+                    FirebaseFirestore db;
+                    db = FirebaseFirestore.getInstance();
 
-                db.collection("clientes").document(txtClient.getText().toString())
-                    .get()
-                    .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                            if (task.isSuccessful()) {
-                                DocumentSnapshot document = task.getResult();
-                                if (document.exists()) {
-                                    // -------------------------------------------------------------
-                                    db.collection("vehiculos").document(txtVehicle.getText().toString())
+                    db.collection("clientes").document(txtClient.getText().toString())
+                        .get()
+                        .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                if (task.isSuccessful()) {
+                                    DocumentSnapshot document = task.getResult();
+                                    if (document.exists()) {
+                                        // -------------------------------------------------------------
+                                        db.collection("vehiculos").document(txtVehicle.getText().toString())
                                             .get()
                                             .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                                                 @Override
@@ -138,7 +142,7 @@ public class add_alq_Fragment extends Fragment {
                                                                 fechaInicio = date.parse(txtFechaIni.getText().toString());
                                                                 fechaFin = date.parse(txtFechaFin.getText().toString());
                                                                 long diff = fechaFin.getTime() - fechaInicio.getTime();
-                                                                dias = diff / (1000*60*60*24);
+                                                                dias = diff / (1000 * 60 * 60 * 24);
                                                             } catch (ParseException e) {
                                                                 e.printStackTrace();
                                                             }
@@ -157,12 +161,12 @@ public class add_alq_Fragment extends Fragment {
                                                                     total = (dias * 75);
                                                                     break;
                                                             }
-                                                            Toast.makeText(bas.getContext(), "Total a pagar " + total, Toast.LENGTH_LONG).show();
+                                                            //Toast.makeText(bas.getContext(), "Total a pagar " + total, Toast.LENGTH_LONG).show();
                                                             // -------------------------------------------------------------
                                                             alquileresClass nuevoAlquiler = new alquileresClass(txtClient.getText().toString(),
-                                                                    txtVehicle.getText().toString(),txtFechaIni.getText().toString(),
-                                                                    txtFechaFin.getText().toString(),"Alquilado");
-                                                            nuevoAlquiler.setPago(total+"");
+                                                                    txtVehicle.getText().toString(), txtFechaIni.getText().toString(),
+                                                                    txtFechaFin.getText().toString(), "Alquilado");
+                                                            nuevoAlquiler.setPago(total + "");
 
                                                             db.collection("alquileres")
                                                                     .add(nuevoAlquiler)// objeto nuevo
@@ -171,6 +175,7 @@ public class add_alq_Fragment extends Fragment {
                                                                         public void onSuccess(DocumentReference documentReference) {
                                                                             Toast.makeText(bas.getContext(),
                                                                                     "REGISTRO INSERTADO CON EXITO", Toast.LENGTH_SHORT).show();
+                                                                            Navigation.findNavController(view).navigate(R.id.gestionAlquilerFragment);
                                                                         }
                                                                     }).addOnFailureListener(new OnFailureListener() {
                                                                 @Override
@@ -180,23 +185,24 @@ public class add_alq_Fragment extends Fragment {
                                                                 }
                                                             });
                                                             // -------------------------------------------------------------
-                                                        }else{
+                                                        } else {
                                                             Toast.makeText(bas.getContext(), "Error: Vehiculo no registrado", Toast.LENGTH_SHORT).show();
                                                         }
-                                                    }else {
+                                                    } else {
                                                         Toast.makeText(bas.getContext(), "Error: No se encontro el registro", Toast.LENGTH_SHORT).show();
                                                     }
                                                 }
                                             });
-                                    //--------------------------------------------------------------
-                                }else{
-                                    Toast.makeText(bas.getContext(), "Error: Cliente no registrado", Toast.LENGTH_SHORT).show();
+                                        //--------------------------------------------------------------
+                                    } else {
+                                        Toast.makeText(bas.getContext(), "Error: Cliente no registrado", Toast.LENGTH_SHORT).show();
+                                    }
+                                } else {
+                                    Toast.makeText(bas.getContext(), "Error: No se encontro el registro", Toast.LENGTH_SHORT).show();
                                 }
-                            }else {
-                                Toast.makeText(bas.getContext(), "Error: No se encontro el registro", Toast.LENGTH_SHORT).show();
                             }
-                        }
-                    });
+                        });
+                }
             }
         });
 

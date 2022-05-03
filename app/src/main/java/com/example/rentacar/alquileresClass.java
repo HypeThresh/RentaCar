@@ -19,7 +19,7 @@ public class alquileresClass {
 
     public String getPago() { return pago; }
 
-    public void setPago(String pago) { this.pago = pago; }
+    public void setPago(String mPago) { this.pago = mPago; }
 
     public String getDocumento() { return documento; }
 

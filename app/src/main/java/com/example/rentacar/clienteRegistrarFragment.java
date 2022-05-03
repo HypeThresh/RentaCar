@@ -49,29 +49,34 @@ public class clienteRegistrarFragment extends Fragment {
                 txtDir = vista.findViewById(R.id.direccionCliente);
                 txtTel = vista.findViewById(R.id.telefonoCliente);
 
+                if (txtName.getText().toString().isEmpty() || txtDui.getText().toString().isEmpty() ||
+                        txtDir.getText().toString().isEmpty() || txtTel.getText().toString().isEmpty()) {
+                    Toast.makeText(vista.getContext(), "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
+                } else {
+                    FirebaseFirestore db;
+                    db = FirebaseFirestore.getInstance();
 
-                FirebaseFirestore db;
-                db = FirebaseFirestore.getInstance();
+                    clienteClass nuevoCliente = new clienteClass(txtName.getText().toString(), txtTel.getText().toString(),
+                            txtDir.getText().toString());
 
-                clienteClass nuevoCliente = new clienteClass(txtName.getText().toString(),txtTel.getText().toString(),
-                        txtDir.getText().toString());
-
-                db.collection("clientes")
-                        .document(txtDui.getText().toString())
-                        .set(nuevoCliente)
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Toast.makeText(vista.getContext(),
-                                "Registro Exitoso", Toast.LENGTH_SHORT).show();
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(vista.getContext(),
-                                "OCURRIO UN ERROR", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                    db.collection("clientes")
+                            .document(txtDui.getText().toString())
+                            .set(nuevoCliente)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Toast.makeText(vista.getContext(),
+                                            "Registro Exitoso", Toast.LENGTH_SHORT).show();
+                                    Navigation.findNavController(vista).navigate(R.id.gestionClientesFragment);
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(vista.getContext(),
+                                    "OCURRIO UN ERROR", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
             }
         });
 

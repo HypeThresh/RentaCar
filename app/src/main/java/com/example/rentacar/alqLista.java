@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -42,6 +43,7 @@ public class alqLista extends Fragment {
         TextView fecha = vista.findViewById(R.id.fechaConsult);
         recyclerView = vista.findViewById(R.id.recyclerViewListAalq);
         ImageView buscar = vista.findViewById(R.id.imageView);
+        ImageView back = vista.findViewById(R.id.imageView2);
         ArrayList<alquileresClass> list;
         list = new ArrayList<>();
 
@@ -97,6 +99,12 @@ public class alqLista extends Fragment {
                 recyclerView.setLayoutManager(new LinearLayoutManager(vista.getContext()));
                 mAdapter = new alqAdapter(list);
                 recyclerView.setAdapter(mAdapter);
+            }
+        });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.gestionAlquilerFragment);
             }
         });
 

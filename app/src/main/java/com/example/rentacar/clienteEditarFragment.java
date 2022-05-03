@@ -97,6 +97,7 @@ public class clienteEditarFragment extends Fragment {
                                                             .document(dui.getText().toString())
                                                             .set(update, SetOptions.merge());
                                                     Toast.makeText(vista.getContext(),"Actualizado con Exito", Toast.LENGTH_SHORT).show();
+                                                    Navigation.findNavController(vista).navigate(R.id.gestionClientesFragment);
                                                 }
                                             });
 

@@ -54,7 +54,7 @@ public class clienteEliminarFragment extends Fragment {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setCancelable(true);
                 builder.setTitle("CONSULTAR");
-                String mensaje = "Deseas consultar el cliente con el DUI: "+dui.getText().toString();
+                String mensaje = "Deseas Consultar el cliente con el DUI: "+dui.getText().toString();
                 builder.setMessage(mensaje);
                 builder.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
                     @Override
@@ -66,49 +66,47 @@ public class clienteEliminarFragment extends Fragment {
                             FirebaseFirestore db;
                             db = FirebaseFirestore.getInstance();
                             db.collection("clientes").document(dui.getText().toString())
-                                    .get()
-                                    .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                            if(task.isSuccessful()){
-                                                DocumentSnapshot documentSnapshot = task.getResult();
-                                                TextView tv1, tv2, tv3;
-                                                tv1 = vista.findViewById(R.id.nombreClienteEliminar);
-                                                tv2 = vista.findViewById(R.id.telefonoClienteEliminar);
-                                                tv3 = vista.findViewById(R.id.direccionClienteEliminar);
+                                .get()
+                                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                        if(task.isSuccessful()){
+                                            DocumentSnapshot documentSnapshot = task.getResult();
+                                            TextView tv1, tv2, tv3;
+                                            tv1 = vista.findViewById(R.id.nombreClienteEliminar);
+                                            tv2 = vista.findViewById(R.id.telefonoClienteEliminar);
+                                            tv3 = vista.findViewById(R.id.direccionClienteEliminar);
 
-                                                if(documentSnapshot.exists()){
-                                                    tv1.setVisibility(View.VISIBLE);
-                                                    tv2.setVisibility(View.VISIBLE);
-                                                    tv3.setVisibility(View.VISIBLE);
+                                            if(documentSnapshot.exists()){
+                                                tv1.setVisibility(View.VISIBLE);
+                                                tv2.setVisibility(View.VISIBLE);
+                                                tv3.setVisibility(View.VISIBLE);
 
-                                                    String nombre = "" + task.getResult().get("cliente").toString();
-                                                    tv1.setText(nombre);
-                                                    String tel = "" + task.getResult().get("telefono").toString();
-                                                    tv2.setText(tel);
-                                                    String dir = "" + task.getResult().get("direccion").toString();
-                                                    tv3.setText(dir);
+                                                String nombre = "" + task.getResult().get("cliente").toString();
+                                                tv1.setText(nombre);
+                                                String tel = "" + task.getResult().get("telefono").toString();
+                                                tv2.setText(tel);
+                                                String dir = "" + task.getResult().get("direccion").toString();
+                                                tv3.setText(dir);
 
-                                                    Toast.makeText(vista.getContext(), "Datos Encontrados",
-                                                            Toast.LENGTH_SHORT).show();
-                                                    }else{
-                                                    tv1.setVisibility(View.INVISIBLE);
-                                                    tv2.setVisibility(View.INVISIBLE);
-                                                    tv3.setVisibility(View.INVISIBLE);
-                                                    tv1.setText("");
-                                                    tv2.setText("");
-                                                    tv3.setText("");
+                                                Toast.makeText(vista.getContext(), "Datos Encontrados",
+                                                        Toast.LENGTH_SHORT).show();
+                                                }else{
+                                                tv1.setVisibility(View.INVISIBLE);
+                                                tv2.setVisibility(View.INVISIBLE);
+                                                tv3.setVisibility(View.INVISIBLE);
+                                                tv1.setText("");
+                                                tv2.setText("");
+                                                tv3.setText("");
 
-                                                    Toast.makeText(vista.getContext(),
-                                                            "No encontrado", Toast.LENGTH_SHORT).show();
-
-
-                                                }
-                                            }else{
-                                                Toast.makeText(vista.getContext(), "Error al realizar la consulta", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(vista.getContext(),
+                                                        "No encontrado", Toast.LENGTH_SHORT).show();
                                             }
+                                        }else{
+                                            Toast.makeText(vista.getContext(), "Error al realizar la consulta", Toast.LENGTH_SHORT).show();
                                         }
-                                    });
+                                    }
+                                });
                         }
                     }
                 });
@@ -136,10 +134,9 @@ public class clienteEliminarFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-
                 String id = dui.getText().toString();
                 if(dui.getText().toString().isEmpty()){
-                    Toast.makeText(vista.getContext(), "Ingrese una placa", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(vista.getContext(), "Ingrese un numero de DUI", Toast.LENGTH_SHORT).show();
                 }else {
                     FirebaseFirestore db;
                     db = FirebaseFirestore.getInstance();
@@ -162,7 +159,7 @@ public class clienteEliminarFragment extends Fragment {
                                     tv3.setText("");
                                     tv3.setVisibility(View.INVISIBLE);
                                     Toast.makeText(vista.getContext(), "Cliente eliminado correctamente", Toast.LENGTH_SHORT).show();
-
+                                    Navigation.findNavController(vista).navigate(R.id.gestionClientesFragment);
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override

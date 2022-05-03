@@ -59,7 +59,6 @@ public class editarVehiculosFragment extends Fragment {
         placa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setCancelable(true);
                 builder.setTitle("CONSULTAR");
@@ -74,62 +73,58 @@ public class editarVehiculosFragment extends Fragment {
                             FirebaseFirestore db;
                             db = FirebaseFirestore.getInstance();
                             db.collection("vehiculos").document(placa.getText().toString())
-                                    .get()
-                                    .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                .get()
+                                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
 
-                                            if (task.isSuccessful()) {
-                                                DocumentSnapshot document = task.getResult();
+                                        if (task.isSuccessful()) {
+                                            DocumentSnapshot document = task.getResult();
 
-                                                if (document.exists()){
-                                                    tv1.setVisibility(View.VISIBLE);
-                                                    tv2.setVisibility(View.VISIBLE);
-                                                    tv3.setVisibility(View.VISIBLE);
-                                                    sp1.setVisibility(View.VISIBLE);
-                                                    sp2.setVisibility(View.VISIBLE);
+                                            if (document.exists()){
+                                                tv1.setVisibility(View.VISIBLE);
+                                                tv2.setVisibility(View.VISIBLE);
+                                                tv3.setVisibility(View.VISIBLE);
+                                                sp1.setVisibility(View.VISIBLE);
+                                                sp2.setVisibility(View.VISIBLE);
 
-                                                    String nombre = "" + task.getResult().getData().get("nombre");
-                                                    tv1.setText(nombre);
-                                                    String modelo = "" + task.getResult().getData().get("modelo");
-                                                    tv2.setText(modelo);
-                                                    String marca = "" + task.getResult().getData().get("marca");
-                                                    tv3.setText(marca);
-                                                    String tipo = "" + task.getResult().getData().get("tipo");
-                                                    sp1.setSelection(tipos(tipo));
+                                                String nombre = "" + task.getResult().getData().get("nombre");
+                                                tv1.setText(nombre);
+                                                String modelo = "" + task.getResult().getData().get("modelo");
+                                                tv2.setText(modelo);
+                                                String marca = "" + task.getResult().getData().get("marca");
+                                                tv3.setText(marca);
+                                                String tipo = "" + task.getResult().getData().get("tipo");
+                                                sp1.setSelection(tipos(tipo));
 
-                                                    String estado = "" + task.getResult().getData().get("estado");
-                                                    sp2.setSelection(estados(estado));
+                                                String estado = "" + task.getResult().getData().get("estado");
+                                                sp2.setSelection(estados(estado));
 
-                                                    Toast.makeText(vista.getContext(), "Datos encontrados", Toast.LENGTH_SHORT).show();
-
-                                                }else{
-                                                    tv1.setVisibility(View.INVISIBLE);
-                                                    tv2.setVisibility(View.INVISIBLE);
-                                                    tv3.setVisibility(View.INVISIBLE);
-                                                    sp1.setVisibility(View.INVISIBLE);
-                                                    sp2.setVisibility(View.INVISIBLE);
-                                                    tv1.setText("");
-                                                    tv2.setText("");
-                                                    tv3.setText("");
-                                                    sp1.setSelection(0);
-                                                    sp2.setSelection(0);
-
-                                                    Toast.makeText(vista.getContext(), "Datos no encontrados", Toast.LENGTH_SHORT).show();
-                                                }
+                                                Toast.makeText(vista.getContext(), "Datos encontrados", Toast.LENGTH_SHORT).show();
 
                                             }else{
-                                                Toast.makeText(vista.getContext(), "Error al realizar la consulta", Toast.LENGTH_SHORT).show();
+                                                tv1.setVisibility(View.INVISIBLE);
+                                                tv2.setVisibility(View.INVISIBLE);
+                                                tv3.setVisibility(View.INVISIBLE);
+                                                sp1.setVisibility(View.INVISIBLE);
+                                                sp2.setVisibility(View.INVISIBLE);
+                                                tv1.setText("");
+                                                tv2.setText("");
+                                                tv3.setText("");
+                                                sp1.setSelection(0);
+                                                sp2.setSelection(0);
+
+                                                Toast.makeText(vista.getContext(), "Datos no encontrados", Toast.LENGTH_SHORT).show();
                                             }
 
+                                        }else{
+                                            Toast.makeText(vista.getContext(), "Error al realizar la consulta", Toast.LENGTH_SHORT).show();
                                         }
-                                    });
-
+                                    }
+                                });
                         }
                     }
-
                 });
-
                 builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -138,7 +133,6 @@ public class editarVehiculosFragment extends Fragment {
                 });
                 builder.create();
                 builder.show();
-
             }
         });
 
@@ -154,40 +148,43 @@ public class editarVehiculosFragment extends Fragment {
         btnEditar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                vehiculosClass actualizarVehiculo = new vehiculosClass(tv1.getText().toString(),
-                        tv3.getText().toString(),tv2.getText().toString(),
-                        sp1.getSelectedItem().toString(),sp2.getSelectedItem().toString(),0);
+                if (tv1.getText().toString().isEmpty() || tv2.getText().toString().isEmpty() ||
+                        tv3.getText().toString().isEmpty()) {
+                    Toast.makeText(vista.getContext(), "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
+                } else {
+                    vehiculosClass actualizarVehiculo = new vehiculosClass(tv1.getText().toString(),
+                            tv3.getText().toString(), tv2.getText().toString(),
+                            sp1.getSelectedItem().toString(), sp2.getSelectedItem().toString(), 0);
 
-                FirebaseFirestore db;
-                db = FirebaseFirestore.getInstance();
-                DocumentReference docRef = db.collection("vehiculos").document(placa.getText().toString());
-                docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if (task.isSuccessful()) {
-                            DocumentSnapshot document = task.getResult();
-                            if (document.exists()) {
-                                Map<String, Object> update = new HashMap<>();
-                                update.put("nombre", tv1.getText().toString());
-                                update.put("modelo", tv2.getText().toString());
-                                update.put("marca", tv3.getText().toString());
-                                update.put("tipo", sp1.getSelectedItem().toString());
-                                update.put("estado", sp2.getSelectedItem().toString());
+                    FirebaseFirestore db;
+                    db = FirebaseFirestore.getInstance();
+                    DocumentReference docRef = db.collection("vehiculos").document(placa.getText().toString());
+                    docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                            if (task.isSuccessful()) {
+                                DocumentSnapshot document = task.getResult();
+                                if (document.exists()) {
+                                    Map<String, Object> update = new HashMap<>();
+                                    update.put("nombre", tv1.getText().toString());
+                                    update.put("modelo", tv2.getText().toString());
+                                    update.put("marca", tv3.getText().toString());
+                                    update.put("tipo", sp1.getSelectedItem().toString());
+                                    update.put("estado", sp2.getSelectedItem().toString());
 
-                                db.collection("vehiculos")
-                                    .document(placa.getText().toString())
-                                    .set(update, SetOptions.merge());
-                                Toast.makeText(vista.getContext(), "Actualizado con exito", Toast.LENGTH_SHORT).show();
+                                    db.collection("vehiculos")
+                                            .document(placa.getText().toString())
+                                            .set(update, SetOptions.merge());
+                                    Toast.makeText(vista.getContext(), "Actualizado con exito", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Toast.makeText(vista.getContext(), "Id no encontrado", Toast.LENGTH_SHORT).show();
+                                }
                             } else {
-                                Toast.makeText(vista.getContext(), "Id no encontrado", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(vista.getContext(), "Error al editar", Toast.LENGTH_SHORT).show();
                             }
-                        } else {
-                            Toast.makeText(vista.getContext(), "Error al editar", Toast.LENGTH_SHORT).show();
                         }
-                    }
-                });
-
-
+                    });
+                }
             }
         });
 
